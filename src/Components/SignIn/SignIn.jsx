@@ -14,6 +14,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import houseImage from '../../Assets/Rentalhouse.jpg'
 import Logo from '../../Assets/Group.svg'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { easings } from "react-animation";
+
+
 
 
 
@@ -40,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
             theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        animation: `pop-in ${easings.easeOutQuart} 1000ms forwards`,
+
     },
     paper: {
         // margin: theme.spacing(8, 4),
@@ -67,7 +72,8 @@ const useStyles = makeStyles((theme) => ({
     },
     Logo: {
         height: 200,
-        width: 450
+        width: 450,
+        animation: `fade-in ${easings.easeOutQuart} 5000ms forwards`
     },
     paperContainer: {
         backgroundColor: '#F3FCF4'

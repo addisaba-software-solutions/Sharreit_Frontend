@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import SignIn from './Components/SignIn/SignIn'
-import LandingPage from './Components/Landing Page/LandingPage'
+import SignIn from './Components/SignIn/SignIn';
+import LandingPage from './Components/Landing Page/LandingPage';
+import history from './Config/history';
 
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter history={history}>
         <Switch>
           <Route path="/" component={LandingPage} exact />
           <Route path="/signIn" component={SignIn} exact />
@@ -16,6 +17,8 @@ class App extends React.Component {
     );
   }
 }
+
+
 // function mapStateToProps(state) {
 //   return {
 //     isLogin: state.loginReducer.isLogin,

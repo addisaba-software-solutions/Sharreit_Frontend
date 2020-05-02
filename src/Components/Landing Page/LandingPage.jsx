@@ -18,10 +18,18 @@ import {
 } from "@material-ui/core";
 import Logo from '../../Assets/Group.svg'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
-import {Link} from "react-router-dom";
+import { withRouter } from 'react-router-dom';
+
+
+
 
 
 class LandingPage extends React.Component {
+
+
+  routeChange() {
+    this.props.history.push("/signIn");
+  }
   render() {
     return (
       <>
@@ -112,10 +120,11 @@ class LandingPage extends React.Component {
                     </Button>
                   </Grid>
                   <Grid item>
-                    <Link to='/Signin'>
                     <Button
-                    style={classes.Headertext2}>LOGIN</Button>
-                    </Link>
+                      onClick={this.routeChange.bind(this)}
+                      style={classes.Headertext2}>
+                      LOGIN
+                      </Button>
 
                   </Grid>
                   <Grid item>
@@ -543,9 +552,6 @@ class LandingPage extends React.Component {
             <MoreHorizIcon style={classes.threeDots} />
           </IconButton>
         </Grid>
-        {/* <IconButton>
-          <MoreHorizIcon style={classes.threeDots} />
-        </IconButton> */}
         <Box style={classes.footerLayer}>
           <Grid xs={12} style={{
             marginLeft: 450,
@@ -640,4 +646,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);
