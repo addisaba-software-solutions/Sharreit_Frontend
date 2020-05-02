@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import SignIn from './Components/SignIn/SignIn';
+import SignIn from './Components/SignIn';
 import LandingPage from './Components/Landing Page/LandingPage';
 import history from './Config/history';
 
