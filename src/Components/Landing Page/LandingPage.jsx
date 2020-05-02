@@ -16,6 +16,9 @@ import {
   Box,
   Grid,
 } from "@material-ui/core";
+import Logo from '../../Assets/Group.svg'
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
+import {Link} from "react-router-dom";
 
 
 class LandingPage extends React.Component {
@@ -35,7 +38,8 @@ class LandingPage extends React.Component {
               <Grid container xs={12} display="flex" justify="space-between">
                 <Grid container xs={6} spacing={3}>
                   <Grid item>
-                    <Button>Sharre APP</Button>
+                    <img src={Logo} style={classes.Logo} alt="" />
+
                   </Grid>
 
                   <Grid item style={classes.ShareAppPadding}>
@@ -108,7 +112,11 @@ class LandingPage extends React.Component {
                     </Button>
                   </Grid>
                   <Grid item>
-                    <Button style={classes.Headertext2}>LOGIN</Button>
+                    <Link to='/Signin'>
+                    <Button
+                    style={classes.Headertext2}>LOGIN</Button>
+                    </Link>
+
                   </Grid>
                   <Grid item>
                     <Button
@@ -331,7 +339,7 @@ class LandingPage extends React.Component {
               <Typography variant='caption'>
                 See More vehicles
                   </Typography>
-              <ExpandMoreIcon />
+              <ArrowRightAltIcon />
             </Button>
           </Grid>
         </Box>
@@ -434,7 +442,7 @@ class LandingPage extends React.Component {
                     <Typography variant='caption'>
                       See More Residences
                   </Typography>
-                    <ExpandMoreIcon />
+                    <ArrowRightAltIcon />
                   </Button>
                 </Grid>
               </Box>
@@ -523,16 +531,21 @@ class LandingPage extends React.Component {
                     <Typography variant='caption'>
                       See More Boats
                   </Typography>
-                    <ExpandMoreIcon />
+                    <ArrowRightAltIcon />
                   </Button>
                 </Grid>
               </Box>
             </Grid>
           </Grid>
         </Box>
-        <IconButton>
+        <Grid xs={12} align='center'>
+          <IconButton>
+            <MoreHorizIcon style={classes.threeDots} />
+          </IconButton>
+        </Grid>
+        {/* <IconButton>
           <MoreHorizIcon style={classes.threeDots} />
-        </IconButton>
+        </IconButton> */}
         <Box style={classes.footerLayer}>
           <Grid xs={12} style={{
             marginLeft: 450,
@@ -554,7 +567,7 @@ class LandingPage extends React.Component {
                 <Grid container>
                   <Grid item>Rent Vehicles</Grid>
                   <Grid item style={classes.expand}>
-                    <ExpandMoreIcon fontSize="small" />
+                    <ArrowRightAltIcon fontSize="small" />
                   </Grid>
                 </Grid>
               </Button>
@@ -565,7 +578,7 @@ class LandingPage extends React.Component {
                 <Grid container>
                   <Grid item>Rent Boats</Grid>
                   <Grid item style={classes.expand}>
-                    <ExpandMoreIcon fontSize="small" />
+                    <ArrowRightAltIcon fontSize="small" />
                   </Grid>
                 </Grid>
               </Button>
@@ -576,7 +589,7 @@ class LandingPage extends React.Component {
                 <Grid container>
                   <Grid item>Rent Apartments</Grid>
                   <Grid item style={classes.expand}>
-                    <ExpandMoreIcon fontSize="small" />
+                    <ArrowRightAltIcon fontSize="small" />
                   </Grid>
                 </Grid>
               </Button>
@@ -587,7 +600,7 @@ class LandingPage extends React.Component {
                 <Grid container>
                   <Grid item>Rent Clothings</Grid>
                   <Grid item style={classes.expand}>
-                    <ExpandMoreIcon fontSize="small" />
+                    <ArrowRightAltIcon fontSize="small" />
                   </Grid>
                 </Grid>
               </Button>

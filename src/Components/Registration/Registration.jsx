@@ -13,7 +13,6 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import houseImage from '../../Assets/Rentalhouse.jpg'
-import Logo from '../../Assets/Logo.png'
 
 
 function Copyright() {
@@ -70,8 +69,8 @@ export default function SignInSide() {
             <Grid item xs={false} sm={4} md={7} className={classes.image} />
             <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
 
-
                 <div className={classes.paper}>
+
                     <Avatar className={classes.avatar}>
                         <LockOutlinedIcon />
                     </Avatar>

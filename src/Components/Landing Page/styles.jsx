@@ -180,6 +180,10 @@ const classes = {
     footerLayerText: {
         color: '#002E25',
         fontWeight: 600
+    },
+    Logo: {
+        height: 40,
+        width: 80
     }
 };
 
