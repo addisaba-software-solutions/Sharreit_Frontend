@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
-import LandingPage from './Components/Landing Page/LandingPage'
+// import LandingPage from './Components/Landing Page/LandingPage';
+import SignIn from './Components/SignIn/SignIn';
 
 ReactDOM.render(
   <React.StrictMode>
-    <LandingPage />
+    <SignIn />
   </React.StrictMode>,
   document.getElementById('root')
 );
