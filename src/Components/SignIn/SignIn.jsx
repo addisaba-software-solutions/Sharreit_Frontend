@@ -13,6 +13,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import houseImage from '../../Assets/Rentalhouse.jpg'
+// import Logo from '../../Assets/Logo.png'
+import Logo from '../../Assets/Group.svg'
+
 
 
 function Copyright() {
@@ -32,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         height: '100vh',
         marginRight: 300,
+        backgroundColor: '#F3FCF4'
     },
     image: {
         backgroundImage: `url(${houseImage})`,
@@ -42,22 +46,42 @@ const useStyles = makeStyles((theme) => ({
         backgroundPosition: 'center',
     },
     paper: {
-        margin: theme.spacing(8, 4),
+        // margin: theme.spacing(8, 4),
+        margin: 100,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+
     },
     avatar: {
         margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: '#008060'
     },
     form: {
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
+        color: '#008060'
     },
     submit: {
+        backgroundColor: "#008060",
+        color: "#FFFFFF",
         margin: theme.spacing(3, 0, 2),
     },
+    Logo: {
+        height: 200,
+        width: 450
+    },
+    paperContainer: {
+        backgroundColor: '#F3FCF4'
+
+    },
+    checkbox: {
+        color: '#008060'
+    },
+    primary: {
+        color: '#008060'
+
+    }
 }));
 
 export default function SignInSide() {
@@ -67,9 +91,10 @@ export default function SignInSide() {
         <Grid container component="main" className={classes.root}>
             <CssBaseline />
             <Grid item xs={false} sm={4} md={7} className={classes.image} />
-            <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+            <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square className={classes.paperContainer}>
 
                 <div className={classes.paper}>
+                    <img src={Logo} className={classes.Logo} alt="" />
 
                     <Avatar className={classes.avatar}>
                         <LockOutlinedIcon />
@@ -101,26 +126,28 @@ export default function SignInSide() {
                             autoComplete="current-password"
                         />
                         <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
+                            control={<Checkbox value="remember" className={classes.checkbox} />}
                             label="Remember me"
                         />
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className={classes.submit}
-                        >
-                            Sign In
+                        <Grid xs={12} align='center'>
+                            <Button
+                                type="submit"
+                                // fullWidth
+                                variant="contained"
+                                className={classes.submit}
+                            >
+                                Sign In
                         </Button>
+                        </Grid>
+
                         <Grid container>
-                            <Grid item xs>
-                                <Link href="#" variant="body2">
+                            <Grid item xs  >
+                                <Link className={classes.primary} href="#" variant="body2">
                                     Forgot password?
                         </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link className={classes.primary} href="#" variant="caption">
                                     {"Don't have an account? Sign Up"}
                                 </Link>
                             </Grid>

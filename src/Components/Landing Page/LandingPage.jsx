@@ -16,20 +16,9 @@ import {
   Box,
   Grid,
 } from "@material-ui/core";
-import Logo from '../../Assets/Group.svg'
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
-import { withRouter } from 'react-router-dom';
-
-
-
 
 
 class LandingPage extends React.Component {
-
-
-  routeChange() {
-    this.props.history.push("/signIn");
-  }
   render() {
     return (
       <>
@@ -46,8 +35,7 @@ class LandingPage extends React.Component {
               <Grid container xs={12} display="flex" justify="space-between">
                 <Grid container xs={6} spacing={3}>
                   <Grid item>
-                    <img src={Logo} style={classes.Logo} alt="" />
-
+                    <Button>Sharre APP</Button>
                   </Grid>
 
                   <Grid item style={classes.ShareAppPadding}>
@@ -120,12 +108,7 @@ class LandingPage extends React.Component {
                     </Button>
                   </Grid>
                   <Grid item>
-                    <Button
-                      onClick={this.routeChange.bind(this)}
-                      style={classes.Headertext2}>
-                      LOGIN
-                      </Button>
-
+                    <Button style={classes.Headertext2}>LOGIN</Button>
                   </Grid>
                   <Grid item>
                     <Button
@@ -348,7 +331,7 @@ class LandingPage extends React.Component {
               <Typography variant='caption'>
                 See More vehicles
                   </Typography>
-              <ArrowRightAltIcon />
+              <ExpandMoreIcon />
             </Button>
           </Grid>
         </Box>
@@ -451,7 +434,7 @@ class LandingPage extends React.Component {
                     <Typography variant='caption'>
                       See More Residences
                   </Typography>
-                    <ArrowRightAltIcon />
+                    <ExpandMoreIcon />
                   </Button>
                 </Grid>
               </Box>
@@ -540,18 +523,16 @@ class LandingPage extends React.Component {
                     <Typography variant='caption'>
                       See More Boats
                   </Typography>
-                    <ArrowRightAltIcon />
+                    <ExpandMoreIcon />
                   </Button>
                 </Grid>
               </Box>
             </Grid>
           </Grid>
         </Box>
-        <Grid xs={12} align='center'>
-          <IconButton>
-            <MoreHorizIcon style={classes.threeDots} />
-          </IconButton>
-        </Grid>
+        <IconButton>
+          <MoreHorizIcon style={classes.threeDots} />
+        </IconButton>
         <Box style={classes.footerLayer}>
           <Grid xs={12} style={{
             marginLeft: 450,
@@ -573,7 +554,7 @@ class LandingPage extends React.Component {
                 <Grid container>
                   <Grid item>Rent Vehicles</Grid>
                   <Grid item style={classes.expand}>
-                    <ArrowRightAltIcon fontSize="small" />
+                    <ExpandMoreIcon fontSize="small" />
                   </Grid>
                 </Grid>
               </Button>
@@ -584,7 +565,7 @@ class LandingPage extends React.Component {
                 <Grid container>
                   <Grid item>Rent Boats</Grid>
                   <Grid item style={classes.expand}>
-                    <ArrowRightAltIcon fontSize="small" />
+                    <ExpandMoreIcon fontSize="small" />
                   </Grid>
                 </Grid>
               </Button>
@@ -595,7 +576,7 @@ class LandingPage extends React.Component {
                 <Grid container>
                   <Grid item>Rent Apartments</Grid>
                   <Grid item style={classes.expand}>
-                    <ArrowRightAltIcon fontSize="small" />
+                    <ExpandMoreIcon fontSize="small" />
                   </Grid>
                 </Grid>
               </Button>
@@ -606,7 +587,7 @@ class LandingPage extends React.Component {
                 <Grid container>
                   <Grid item>Rent Clothings</Grid>
                   <Grid item style={classes.expand}>
-                    <ArrowRightAltIcon fontSize="small" />
+                    <ExpandMoreIcon fontSize="small" />
                   </Grid>
                 </Grid>
               </Button>
@@ -646,4 +627,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default withRouter(LandingPage);
+export default LandingPage;
