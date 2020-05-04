@@ -18,18 +18,18 @@ import {
 } from "@material-ui/core";
 import Logo from "../../Assets/Group.svg";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
-import AnimatedButtons from './animated-buttons'
+import AnimatedButtons from "./animated-buttons";
 
 class LandingPage extends React.Component {
-    constructor() {
-        super()
-        this.state = { animationStart: false }
-    }
+  constructor() {
+    super();
+    this.state = { animationStart: false };
+  }
 
-    routeChange() {
-        this.props.history.push("/signIn");
-    }
-    render() {
+  routeChange() {
+    this.props.history.push("/signIn");
+  }
+  render() {
     return (
       <>
         <Box style={classes.root}>
@@ -241,9 +241,9 @@ class LandingPage extends React.Component {
                 </Grid>
               </Grid>
             </Grid>
-            
+
             {/* Starting Of Body One's Left Side ? */}
-            <Grid item xs={6} style={classes.spacing}> 
+            <Grid item xs={6} style={classes.spacing}>
               <Grid item>
                 <img style={classes.CarImage} src={CarImage} alt="" />
               </Grid>
@@ -257,7 +257,7 @@ class LandingPage extends React.Component {
                   <img style={classes.CarImage2} src={CarImage2} alt="" />
                 </Grid>
                 <Grid item>
-                  <img style={classes.CarImage2} src={bulldozer} alt=""/>
+                  <img style={classes.CarImage2} src={bulldozer} alt="" />
                 </Grid>
               </Grid>
               <Box style={classes.LastImage} />
@@ -267,114 +267,115 @@ class LandingPage extends React.Component {
         <Box style={{ height: 30 }} />
 
         <Grid xs={12} align="left">
-            <AnimatedButtons start={true} />
+          <AnimatedButtons start={true} />
         </Grid>
         <Grid xs={12} align="center">
           <IconButton>
             <MoreHorizIcon style={classes.threeDots} />
           </IconButton>
         </Grid>
-
-        <Box style={classes.cars}>
-          <Grid item xs={12}>
-            <Typography align="left" style={classes.secondaryContainers}>
-              VEHICLES
-            </Typography>
-          </Grid>
-          <Grid xs={12}>
-            <Typography align="left" style={classes.secondaryContainers1}>
-              Different Vehicles for Different Purposes
-            </Typography>
-            <Typography
-              align="left"
-              style={{
-                fontWeight: 10,
-                color: "#7D7D7D",
-              }}
-            >
-              Bring your Minamn to life with an Rental website.
-            </Typography>
-          </Grid>
-
-          {/* Card One Body */}
-          <Grid container xs={12} spacing={2} style={classes.cardOneBody}>
-            <Grid item xs={6}>
-              <div>
-                <Typography align="left" style={classes.secondaryContainers}>
-                  CONSTRUCTION
-                </Typography>
-                <Typography
-                  align="left"
-                  style={{
-                    fontWeight: 10,
-                    color: "#7D7D7D",
-                    paddingTop: 10,
-                  }}
-                >
-                  Bring your Minamn to life with an Rental website. Bring your
-                  Minamn to life with an Rental website.
-                </Typography>
-              </div>
-              <div
+        <Grid xs={12} align="center">
+          <Box style={classes.cars}>
+            <Grid item xs={12}>
+              <Typography align="left" style={classes.secondaryContainers}>
+                VEHICLES
+              </Typography>
+            </Grid>
+            <Grid xs={12}>
+              <Typography align="left" style={classes.secondaryContainers1}>
+                Different Vehicles for Different Purposes
+              </Typography>
+              <Typography
+                align="left"
                 style={{
-                  paddingTop: 30,
+                  fontWeight: 10,
+                  color: "#7D7D7D",
                 }}
               >
-                <Typography align="left" style={classes.secondaryContainers}>
-                  Luxury
-                </Typography>
-                <Typography
-                  align="left"
+                Bring your Minamn to life with an Rental website.
+              </Typography>
+            </Grid>
+
+            {/* Card One Body */}
+            <Grid container xs={12} spacing={2} style={classes.cardOneBody}>
+              <Grid item xs={6}>
+                <div>
+                  <Typography align="left" style={classes.secondaryContainers}>
+                    CONSTRUCTION
+                  </Typography>
+                  <Typography
+                    align="left"
+                    style={{
+                      fontWeight: 10,
+                      color: "#7D7D7D",
+                      paddingTop: 10,
+                    }}
+                  >
+                    Bring your Minamn to life with an Rental website. Bring your
+                    Minamn to life with an Rental website.
+                  </Typography>
+                </div>
+                <div
                   style={{
-                    fontWeight: 10,
-                    color: "#7D7D7D",
-                    paddingTop: 10,
+                    paddingTop: 30,
                   }}
                 >
-                  Bring your Minamn to life with an Rental website. Bring your
-                  Minamn to life with an Rental website.
-                </Typography>
-              </div>
-              <div
+                  <Typography align="left" style={classes.secondaryContainers}>
+                    Luxury
+                  </Typography>
+                  <Typography
+                    align="left"
+                    style={{
+                      fontWeight: 10,
+                      color: "#7D7D7D",
+                      paddingTop: 10,
+                    }}
+                  >
+                    Bring your Minamn to life with an Rental website. Bring your
+                    Minamn to life with an Rental website.
+                  </Typography>
+                </div>
+                <div
+                  style={{
+                    paddingTop: 30,
+                  }}
+                >
+                  <Typography align="left" style={classes.secondaryContainers}>
+                    BASIC
+                  </Typography>
+                  <Typography
+                    align="left"
+                    style={{
+                      fontWeight: 10,
+                      color: "#7D7D7D",
+                      paddingTop: 10,
+                    }}
+                  >
+                    Bring your Minamn to life with an Rental website. Bring your
+                    Minamn to life with an Rental website.
+                  </Typography>
+                </div>
+              </Grid>
+              <Grid
+                item
+                xs={6}
+                display="flex"
+                justify="flex-end"
                 style={{
-                  paddingTop: 30,
+                  marginTop: 30,
                 }}
               >
-                <Typography align="left" style={classes.secondaryContainers}>
-                  BASIC
-                </Typography>
-                <Typography
-                  align="left"
-                  style={{
-                    fontWeight: 10,
-                    color: "#7D7D7D",
-                    paddingTop: 10,
-                  }}
-                >
-                  Bring your Minamn to life with an Rental website. Bring your
-                  Minamn to life with an Rental website.
-                </Typography>
-              </div>
+                <img style={classes.CarImage2} src={CarImage2} alt="" />
+              </Grid>
             </Grid>
-            <Grid
-              item
-              xs={6}
-              display="flex"
-              justify="flex-end"
-              style={{
-                marginTop: 30,
-              }}
-            >
-              <img style={classes.CarImage2} src={CarImage2} alt="" />
+            <Grid xs={12} container display="flex" justify="flex-end">
+              <Button>
+                <Typography variant="caption">See More vehicles</Typography>
+                <ArrowRightAltIcon />
+              </Button>
             </Grid>
-          </Grid>
-          <Grid xs={12} container display="flex" justify="flex-end">
-            <Button>
-              <Typography variant="caption">See More vehicles</Typography>
-              <ArrowRightAltIcon />
-            </Button>
-          </Grid>
-        </Box>
+          </Box>
+        </Grid>
         <Box style={{ height: 30 }} />
         <Grid xs={12} align="center">
           <IconButton>
@@ -389,11 +390,8 @@ class LandingPage extends React.Component {
           <Grid
             container
             xs={12}
-            style={{
-              paddingLeft: 150,
-            }}
           >
-            <Grid item xs={6}>
+            <Grid item xs={6} align='center'>
               <Box style={classes.carsother}>
                 <Grid item xs={12}>
                   <Typography align="left" style={classes.secondaryContainers}>
@@ -507,7 +505,7 @@ class LandingPage extends React.Component {
               </Box>
             </Grid>
 
-            <Grid item xs={6}>
+            <Grid item xs={6} align='center'>
               <Box style={classes.carsother}>
                 <Grid item xs={12}>
                   <Typography align="left" style={classes.secondaryContainers}>
@@ -632,6 +630,7 @@ class LandingPage extends React.Component {
               marginRight: 450,
               paddingBottom: 20,
             }}
+            align='center'
           >
             <Typography
               style={{
