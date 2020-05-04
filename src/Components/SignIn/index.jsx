@@ -129,7 +129,8 @@ export default function SignIn() {
                 // fullWidth
                 variant="contained"
                 className={classes.submit}
-                onClick={handleClick}
+                // onClick={handleClick}
+                href="/CategoryPage"
               >
                 Sign In
               </Button>
@@ -142,7 +143,11 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link className={classes.primary} href="#" variant="caption">
+                <Link
+                  className={classes.primary}
+                  href="/Registration"
+                  variant="caption"
+                >
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

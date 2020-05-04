@@ -4,7 +4,7 @@ import { Button, Grid, AppBar } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Logo from "../../Assets/Group.svg";
 
-export default function Category() {
+ export default function CategoryPage() {
   return (
     <AppBar
       style={{
