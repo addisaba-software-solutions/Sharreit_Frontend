@@ -49,5 +49,18 @@ export default makeStyles(theme => ({
 
     address_state: {
         width: 243
-    }
+    },
+
+    astrix: {
+        color: 'red',
+        float: 'right'
+    },
+
+    controlFields: {
+        width: 223
+    },
+
+    singularField: {
+        marginTop: 15
+    },
 }))
