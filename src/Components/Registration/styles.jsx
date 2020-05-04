@@ -28,6 +28,8 @@ export default makeStyles((theme) => ({
         : theme.palette.grey[900],
     backgroundSize: "cover",
     backgroundPosition: "center",
+    animation: `pop-in ${easings.easeOutQuart} 1000ms forwards`,
+
   },
   paper: {
     margin: theme.spacing(8, 4),
