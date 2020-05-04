@@ -62,7 +62,7 @@ export default function SignupSide() {
       if (typeof state[element] === 'string') {
         var update = form[element]
         if (state[element] === '' && form[element]['required'] && !form[element]['error']) {
-          update['error'] = !form[element]['error']
+          update['error'] = !form[element]['error'] 
           setForm({ ...form, [element]: update })
         } else if (state[element] !== '' && form[element]['error']) {
           update['error'] = !form[element]['error']
