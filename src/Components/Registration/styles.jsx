@@ -29,10 +29,12 @@ export default makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
     animation: `pop-in ${easings.easeOutQuart} 1000ms forwards`,
-
   },
   paper: {
-    margin: theme.spacing(8, 4),
+    marginLeft: 70,
+    marginRight: 70,
+
+
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -58,26 +60,21 @@ export default makeStyles((theme) => ({
     fontSize: 20,
     fontWeight: 750,
   },
-
   minimalTextFields: {
     display: "flex",
     flexDirection: "row",
   },
-
   address_city: {
     marginRight: 20,
     width: 235,
   },
-
   address_state: {
     width: 243,
   },
-
   astrix: {
     color: "red",
     float: "right",
   },
-
   controlFields: {
     width: 223,
   },
