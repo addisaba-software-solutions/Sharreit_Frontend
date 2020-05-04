@@ -59,7 +59,7 @@ export default function SignupSide() {
 
   const checkForm = () => {
     for (var element in state) {
-      if (typeof state[element] === 'string') {
+      if (typeof state[element] === 'string') { 
         var update = form[element]
         if (state[element] === '' && form[element]['required'] && !form[element]['error']) {
           update['error'] = !form[element]['error'] 
