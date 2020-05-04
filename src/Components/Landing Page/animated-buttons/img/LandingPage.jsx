@@ -18,18 +18,12 @@ import {
 } from "@material-ui/core";
 import Logo from "../../Assets/Group.svg";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
-import AnimatedButtons from './animated-buttons'
 
 class LandingPage extends React.Component {
-    constructor() {
-        super()
-        this.state = { animationStart: false }
-    }
-
-    routeChange() {
-        this.props.history.push("/signIn");
-    }
-    render() {
+  routeChange() {
+    this.props.history.push("/signIn");
+  }
+  render() {
     return (
       <>
         <Box style={classes.root}>
@@ -241,9 +235,9 @@ class LandingPage extends React.Component {
                 </Grid>
               </Grid>
             </Grid>
-            
+
             {/* Starting Of Body One's Left Side ? */}
-            <Grid item xs={6} style={classes.spacing}> 
+            <Grid item xs={6} style={classes.spacing}>
               <Grid item>
                 <img style={classes.CarImage} src={CarImage} alt="" />
               </Grid>
@@ -257,7 +251,7 @@ class LandingPage extends React.Component {
                   <img style={classes.CarImage2} src={CarImage2} alt="" />
                 </Grid>
                 <Grid item>
-                  <img style={classes.CarImage2} src={bulldozer} alt=""/>
+                  <img style={classes.CarImage2} src={bulldozer} alt="" />
                 </Grid>
               </Grid>
               <Box style={classes.LastImage} />
@@ -266,9 +260,6 @@ class LandingPage extends React.Component {
         </Box>
         <Box style={{ height: 30 }} />
 
-        <Grid xs={12} align="left">
-            <AnimatedButtons start={true} />
-        </Grid>
         <Grid xs={12} align="center">
           <IconButton>
             <MoreHorizIcon style={classes.threeDots} />
@@ -720,4 +711,5 @@ class LandingPage extends React.Component {
     );
   }
 }
+
 export default LandingPage;

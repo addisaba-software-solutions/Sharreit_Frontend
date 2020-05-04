@@ -81,6 +81,7 @@ const classes = {
     paddingLeft: 80,
     paddingTop: 80,
   },
+
   CarImage: {
     height: 510,
     borderRadius: 5,
@@ -178,7 +179,7 @@ const classes = {
   Logo: {
     height: 40,
     width: 80,
-  },
+  }
 };
 
 export default classes;

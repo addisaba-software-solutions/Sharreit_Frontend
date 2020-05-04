@@ -21,7 +21,7 @@ function Copyright() {
 }
 
 
-export default function SignInSide() {
+export default function SignupSide() {
     const classes = useStyles()
     return (
         <Grid container component="main" className={classes.root}>
@@ -117,8 +117,8 @@ export default function SignInSide() {
                                         />
                                     </Grid>
                                 </Grid>
-                                <Grid container xs={6} spacing={3}>
-                                    <Grid item>
+                                <Grid container xs={12} spacing={3}>
+                                    <Grid item xs={6}>
                                         <TextField
                                             variant="outlined"
                                             margin="normal"
@@ -129,28 +129,26 @@ export default function SignInSide() {
                                             fullWidth
                                         />
                                     </Grid>
-                                </Grid>
-                                <Grid container xs={6} spacing={3}>
-                                    <Grid item>
-                                    <FormControl variant="outlined" className={classes.singularField}>
-                                        <InputLabel htmlFor="country">Country</InputLabel>
-                                        <Select
-                                            required
-                                            native
-                                            label="Country"
-                                            inputProps={{
-                                                name: 'country',
-                                                id: 'country'
-                                            }}
-                                            className={classes.controlFields}
-                                            name="country"
-                                            >
-                                            <option aria-label="None" value="" />
-                                            {options.country.map(place => (
-                                                <option value={place}>{place}</option>
-                                            ))}
-                                        </Select>
-                                    </FormControl>
+                                    <Grid item xs={6}>
+                                        <FormControl variant="outlined" className={classes.singularField}>
+                                            <InputLabel htmlFor="country">Country</InputLabel>
+                                            <Select
+                                                required
+                                                native
+                                                label="Country"
+                                                fullWidth
+                                                inputProps={{
+                                                    name: 'country',
+                                                    id: 'country'
+                                                }}
+                                                name="country"
+                                                >
+                                                <option aria-label="None" value="" />
+                                                {options.country.map(place => (
+                                                    <option value={place}>{place}</option>
+                                                ))}
+                                            </Select>
+                                        </FormControl>
                                     </Grid>
                                 </Grid>
                                         
