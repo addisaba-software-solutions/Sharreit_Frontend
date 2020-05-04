@@ -1,17 +1,9 @@
 const classes = {
   root: {
+    backgroundColor: '#F3FCF4',
     marginLeft: 30,
     marginRight: 30,
-    backgroundColor: "#F3FCF4",
     padding: 15,
-    height: 1150,
-  },
-  footerLayer: {
-    marginLeft: 30,
-    marginRight: 30,
-    backgroundColor: "#F3FCF4",
-    padding: 15,
-    height: "auto",
   },
   container: {
     paddingLeft: 30,

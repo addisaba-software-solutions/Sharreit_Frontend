@@ -129,8 +129,8 @@ export default function SignIn() {
                 // fullWidth
                 variant="contained"
                 className={classes.submit}
-                // onClick={handleClick}
-                href="/CategoryPage"
+                onClick={handleClick}
+                // href="/CategoryPage"
               >
                 Sign In
               </Button>
