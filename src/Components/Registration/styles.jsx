@@ -33,8 +33,6 @@ export default makeStyles((theme) => ({
   paper: {
     marginLeft: 70,
     marginRight: 70,
-
-
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
