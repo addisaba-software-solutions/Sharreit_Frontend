@@ -10,6 +10,7 @@ export default makeStyles(theme => ({
     animated: {
         width: 80,
         height: 80,
-        borderRadius: 40
+        borderRadius: 40,
+        marginBottom: 15
     }
 }))

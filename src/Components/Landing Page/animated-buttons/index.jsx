@@ -5,8 +5,7 @@ import image from './img/download.jpg'
 
 const Example = ({ start }) => {
     const classes = useStyles()
-    var ANIMATION_STARTED = false
-    const AMOUNT_OF_BUBBLES = 4
+    const AMOUNT_OF_BUBBLES = 6
     const [state, setState] = React.useState({
         cars: Array(AMOUNT_OF_BUBBLES).fill(false),
     })

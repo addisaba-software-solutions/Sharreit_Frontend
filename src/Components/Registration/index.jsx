@@ -1,195 +1,282 @@
-import React from 'react'
+import React from "react";
 import {
-    Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link,
-    Paper, Box, Grid, Typography, Select, InputLabel, FormControl
-} from '@material-ui/core'
-import { LockOutlined } from '@material-ui/icons'
-import useStyles from './styles'
-import { options } from './data'
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Link,
+  Paper,
+  Box,
+  Grid,
+  Typography,
+  Select,
+  InputLabel,
+  FormControl,
+  FormHelperText,
+} from "@material-ui/core";
+import { LockOutlined } from "@material-ui/icons";
+import useStyles from "./styles";
+import { fields, options } from "./data";
+
+import Logo from "../../Assets/Group.svg";
 
 function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="#">
-                Sharreit
-      </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {"Copyright © "}
+      iWork PLC
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
 }
 
-
 export default function SignupSide() {
-    const classes = useStyles()
-    return (
-        <Grid container component="main" className={classes.root}>
-            <CssBaseline />
-            <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-                <div className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <LockOutlined />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Sign up
-                    </Typography>
-                    <form className={classes.form} noValidate>
-                        <Grid container xs={12} spacing={3} display="flex" justify="space-between">
-                            <Grid container xs={12}>
-                                <TextField
-                                    variant="outlined"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    id="email"
-                                    label="Email Address"
-                                    name="email"
-                                    autoComplete="email"
-                                    autoFocus
-                                />
-                                <TextField
-                                    variant="outlined"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    name="password"
-                                    label="Password"
-                                    type="password"
-                                    id="password"
-                                    autoComplete="current-password"
-                                />
-                                <TextField
-                                    variant="outlined"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    name="confirm_password"
-                                    label="Repeat Password"
-                                    type="password"
-                                    id="confirm_password"
-                                />
-                                <Typography className={classes.addressText}>Address
-                                <div className={classes.astrix}>&nbsp;*</div>
-                                </Typography>
-                                <TextField
-                                    variant="outlined"
-                                    margin="normal"
-                                    required
-                                    fullWidth
-                                    name="street_address_1"
-                                    label="Street Address"
-                                    id="street_address_1"
-                                />
-                                <TextField
-                                    variant="outlined"
-                                    margin="normal"
-                                    fullWidth
-                                    name="street_address_2"
-                                    label="Street Address 2"
-                                    id="street_address_2"
-                                />
-                            </Grid>
-                            <Grid container xs={12} justify="space-between" alignItems="stretch">
-                                <Grid container xs={6}>
-                                    <Grid item>
-                                        <TextField
-                                            variant="outlined"
-                                            margin="normal"
-                                            required
-                                            name="city"
-                                            label="City"
-                                            id="city"
-                                            fullWidth
-                                        />
-                                    </Grid>
-                                </Grid>
-                                <Grid container xs={6} spacing={3}>
-                                    <Grid item>
-                                        <TextField
-                                            variant="outlined"
-                                            margin="normal"
-                                            required
-                                            name="state"
-                                            label="State / Province"
-                                            id="state"
-                                            fullWidth
-                                        />
-                                    </Grid>
-                                </Grid>
-                                <Grid container xs={12} spacing={3}>
-                                    <Grid item xs={6}>
-                                        <TextField
-                                            variant="outlined"
-                                            margin="normal"
-                                            required
-                                            name="zip_code"
-                                            label="Postal / Zip Cide"
-                                            id="zip_code"
-                                            fullWidth
-                                        />
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <FormControl variant="outlined" className={classes.singularField}>
-                                            <InputLabel htmlFor="country">Country</InputLabel>
-                                            <Select
-                                                required
-                                                native
-                                                label="Country"
-                                                fullWidth
-                                                inputProps={{
-                                                    name: 'country',
-                                                    id: 'country'
-                                                }}
-                                                name="country"
-                                                >
-                                                <option aria-label="None" value="" />
-                                                {options.country.map(place => (
-                                                    <option value={place}>{place}</option>
-                                                ))}
-                                            </Select>
-                                        </FormControl>
-                                    </Grid>
-                                </Grid>
-                                        
-                                <Grid container xs={6}>
-                                    <Grid item>
-                                    <FormControlLabel
-                                        control={<Checkbox value="remember" color="primary" />}
-                                        label="Remember me"
-                                    />
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                            <Grid container xs={12} justify="space-between">
-                                <Button
-                                    type="submit"
-                                    fullWidth
-                                    variant="contained"
-                                    color="primary"
-                                    className={classes.submit}
-                                >
-                                    Sign Up
-                                </Button>
-                                <Grid container>
-                                    <Grid item xs>
-                                        <Link href="#" variant="body2"> Forgot password? </Link>
-                                    </Grid>
-                                    <Grid item>
-                                        <Link href="#" variant="body2">
-                                            {"Don't have an account? Sign Up"}
-                                        </Link>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Box mt={5}>
-                            <Copyright />
-                        </Box>
-                    </form>
-                </div>
+  const classes = useStyles()
+  const [state, setState] = React.useState({
+    email: '', password: '', confirm_password: '', street_address_1: '', street_address_2: '',
+    city: '', province: '', country: '', zip_code: ''
+  })
+
+  const [form, setForm] = React.useState({
+    email: fields.email,
+    password: fields.password,
+    confirm_password: fields.confirm_password,
+    street_address_1: fields.street_address_1,
+    street_address_2: fields.street_address_2,
+    city: fields.city,
+    province: fields.province,
+    country: fields.country,
+    zip_code: fields.zip_code
+  })
+
+  const handleChange = event => {
+    const { name, value } = event.target
+    setState({ ...state, [name]: value })
+  }
+
+  const checkForm = () => {
+    for (var element in state) {
+      if (typeof state[element] === 'string') {
+        var update = form[element]
+        if (state[element] === '' && form[element]['required'] && !form[element]['error']) {
+          update['error'] = !form[element]['error']
+          setForm({ ...form, [element]: update })
+        } else if (state[element] !== '' && form[element]['error']) {
+          update['error'] = !form[element]['error']
+          setForm({ ...form, [element]: update })
+        }
+      }
+    }
+  }
+
+  const handleClick = event => {
+    event.preventDefault()
+    const result = checkForm()
+    if (result) {
+      // API goes here
+    }
+  }
+
+  return (
+    <Grid container component="main" className={classes.root}>
+      <CssBaseline />
+      <Grid
+        item
+        xs={12}
+        sm={8}
+        md={5}
+        component={Paper}
+        elevation={6}
+        square
+        className={classes.paperContainer}
+      >
+        <div className={classes.paper}>
+          <img src={Logo} className={classes.Logo} alt="" />
+          <Avatar className={classes.avatar}>
+            <LockOutlined />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign Up
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              onChange={handleChange}
+              error={form.email.error}
+            />
+            <FormHelperText error={form.email.error}>
+              {form.email.error? form.email.errorText: ''}
+            </FormHelperText>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={handleChange}
+              error={form.password.error}
+            />
+            <FormHelperText error={form.password.error}>
+              {form.password.error? form.password.errorText: ''}
+            </FormHelperText>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="confirm_password"
+              label="Repeat Password"
+              type="password"
+              id="confirm_password"
+              onChange={handleChange}
+              error={form.confirm_password.error}
+            />
+            <FormHelperText error={form.confirm_password.error}>
+              {form.confirm_password.error? form.confirm_password.errorText: ''}
+            </FormHelperText>
+            <Typography className={classes.addressText}>Address</Typography>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="street_address_1"
+              label="Street Address"
+              id="street_address_1"
+              onChange={handleChange}
+              error={form.street_address_1.error}
+            />
+            <FormHelperText error={form.street_address_1.error}>
+              {form.street_address_1.error? form.street_address_1.errorText: ''}
+            </FormHelperText>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="street_address_2"
+              label="Street Address 2"
+              id="street_address_2"
+              onChange={handleChange}
+              error={form.street_address_2.error}
+            />
+            <Grid container xs={12} display="flex" justify="space-between">
+              <Grid item xs={6}>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  name="city"
+                  label="City"
+                  id="city"
+                  fullWidth
+                  onChange={handleChange}
+                  error={form.city.error}
+                />
+                <FormHelperText error={form.city.error}>
+                  {form.city.error? form.city.errorText: ''}
+                </FormHelperText>
+              </Grid>
+              <Grid item xs={5}>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  name="province"
+                  label="State / Province"
+                  id="state"
+                  fullWidth
+                  onChange={handleChange}
+                  error={form.province.error}
+                />
+                <FormHelperText error={form.province.error}>
+                  {form.province.error? form.province.errorText: ''}
+                </FormHelperText>
+              </Grid>
             </Grid>
-            <Grid item xs={false} sm={4} md={7} className={classes.image} />
-        </Grid>
-    );
+            <Grid container xs={12} display="flex" justify="space-between">
+              <Grid item xs>
+                <FormControl
+                  variant="outlined"
+                  className={classes.singularField}
+                >
+                  <InputLabel htmlFor="country">Country</InputLabel>
+                  <Select
+                    required
+                    fullWidth
+                    label="Country"
+                    inputProps={{
+                      name: "country",
+                      id: "country",
+                    }}
+                    className={classes.controlFields}
+                    name="country"
+                    onChange={handleChange}
+                    error={form.country.error}
+                  >
+                    <option aria-label="None" value="" />
+                    {options.country.map((place) => (
+                      <option key={place} value={place}>{place}</option>
+                    ))}
+                  </Select>
+                  <FormHelperText error={form.country.error}>
+                    {form.country.error? form.country.errorText: ''}
+                  </FormHelperText>
+                </FormControl>
+              </Grid>
+
+              <Grid item xs={7}>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  name="zip_code"
+                  label="Postal / Zip Cide"
+                  id="zip_code"
+                  fullWidth
+                  onChange={handleChange}
+                  error={form.zip_code.error}
+                />
+                <FormHelperText error={form.zip_code.error}>
+                  {form.zip_code.error? form.zip_code.errorText: ''}
+                </FormHelperText>
+              </Grid>
+            </Grid>
+
+            <Grid xs={12} align="center">
+              <Button
+                type="submit"
+                // fullWidth
+                variant="contained"
+                className={classes.submit}
+                // onClick={handleClick}
+                href="/CategoryPage"
+                onClick={handleClick}
+              >
+                Register
+              </Button>
+            </Grid>
+
+            <Box mt={5}>
+              <Copyright />
+            </Box>
+          </form>
+        </div>
+      </Grid>
+      <Grid item xs={false} sm={4} md={7} className={classes.image} />
+    </Grid>
+  );
 }
