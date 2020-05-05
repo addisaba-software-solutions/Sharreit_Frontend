@@ -5,6 +5,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import SignIn from "./Components/SignIn/";
 import CategoryPage from "./Components/Category Page/";
 import LandingPage from "./Components/Landing Page/LandingPage";
+import SingleItem from "./Components/ViewSingleItem/";
+
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <Route path="/CategoryPage" component={CategoryPage} exact />
         <Route path="/Registration" component={Registration} exact />
         <Route path="/AddItem" component={AddItem} exact />
+        <Route path="/SingleItem" component={SingleItem} exact />
+
       </Switch>
     </BrowserRouter>
   );

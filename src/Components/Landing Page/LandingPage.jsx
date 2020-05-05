@@ -689,6 +689,7 @@ class LandingPage extends React.Component {
             </Grid>
           </Grid>
         </Box>
+
         <Grid xs={12}>
           <Box style={classes.FooterContainer}>
             <Grid container spacing={3}>

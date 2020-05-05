@@ -1,24 +1,27 @@
-import { makeStyles } from "@material-ui/core"
-
 const classes = {
   root: {
-    backgroundColor: '#F3FCF4',
     marginLeft: 30,
     marginRight: 30,
-    padding: 15
+    backgroundColor: "#F3FCF4",
+    padding: 15,
+    height: 1150,
   },
-  
+  footerLayer: {
+    marginLeft: 30,
+    marginRight: 30,
+    backgroundColor: "#F3FCF4",
+    padding: 15,
+    height: "auto",
+  },
   container: {
     paddingLeft: 30,
     paddingRight: 30,
   },
-
   button: {
     backgroundColor: "#008060",
     color: "#FFFFFF",
     padding: 10,
   },
-
   Headertext2: {
     color: "#42474C",
     marginTop: 5,
@@ -26,7 +29,6 @@ const classes = {
     fontWeight: 20,
     spacing: 2,
   },
-
   Headertext1: {
     color: "#42474C",
     marginTop: 5,
@@ -34,32 +36,29 @@ const classes = {
     fontWeight: 40,
     spacing: 2,
   },
-
   ShareAppPadding: {
     marginLeft: 60,
   },
   expand: {
     color: "#42474C",
   },
-
   Logo: {
     height: 40,
     width: 80,
   },
-
-  premiumAdHolder: {
-    display: "flex",
-    flexDirection: "row",
-    width: "100%",
-    whiteSpace: "noWrap",
-    overflowX: "auto",
-    overflowY: "hidden"
+  FooterContainer: {
+    backgroundColor: "#002E25",
+    height: "auto",
+    padding: 30,
   },
-
-  premiumAd: {
-    marginRight: 10
-  }
-
-}
+  footerText1: {
+    color: "#FFFFFF",
+    padding: 5,
+  },
+  footerLayerText: {
+    color: "#002E25",
+    fontWeight: 600,
+  },
+};
 
 export default classes;
