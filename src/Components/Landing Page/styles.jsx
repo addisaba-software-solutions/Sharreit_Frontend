@@ -86,7 +86,6 @@ const classes = {
     height: 510,
     borderRadius: 5,
     animation: `slide-in 3000ms cubic-bezier(0.19, 1, 0.22, 1) forwards`,
-
   },
   CarImage2: {
     animation: `pop-in ${easings.easeInOutBack} 2000ms forwards`,
@@ -179,7 +178,7 @@ const classes = {
   Logo: {
     height: 40,
     width: 80,
-  }
+  },
 };
 
 export default classes;

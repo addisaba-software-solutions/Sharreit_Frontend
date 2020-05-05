@@ -1,9 +1,11 @@
 {
+  "homepage": "http://YohannesBerhanu.github.io/Sharreit_Frontend",
   "name": "typescript_tutorial",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.12",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/react": "^10.0.3",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.13.4",
@@ -20,11 +22,7 @@
     "react": "^16.13.1",
     "react-animation": "^1.2.2",
     "react-dom": "^16.13.1",
-<<<<<<< HEAD
     "react-responsive-carousel": "^3.2.5",
-=======
-    "react-resize-image": "^1.0.4",
->>>>>>> bd917a55d7c05011b5f4b582784f8ac47db635d4
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
@@ -36,7 +34,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,6 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.5.0"
+    "@testing-library/jest-dom": "^5.5.0",
+    "gh-pages": "^2.2.0"
   }
 }

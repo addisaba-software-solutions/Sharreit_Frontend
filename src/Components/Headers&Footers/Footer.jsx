@@ -1,15 +1,12 @@
 import React from "react";
 
 import {
-    Button,
-    Typography,
-    IconButton,
-    Divider,
-    Box,
-    Grid,
-    AppBar,
-  } from "@material-ui/core";
-  import classes from './styles'
+  Button,
+  Divider,
+  Box,
+  Grid,
+} from "@material-ui/core";
+import classes from "./styles";
 
 export default function Footer() {
   return (
