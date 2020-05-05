@@ -387,11 +387,8 @@ class LandingPage extends React.Component {
         </Grid>
 
         <Box>
-          <Grid
-            container
-            xs={12}
-          >
-            <Grid item xs={6} align='center'>
+          <Grid container xs={12}>
+            <Grid item xs={6} align="center">
               <Box style={classes.carsother}>
                 <Grid item xs={12}>
                   <Typography align="left" style={classes.secondaryContainers}>
@@ -505,7 +502,7 @@ class LandingPage extends React.Component {
               </Box>
             </Grid>
 
-            <Grid item xs={6} align='center'>
+            <Grid item xs={6} align="center">
               <Box style={classes.carsother}>
                 <Grid item xs={12}>
                   <Typography align="left" style={classes.secondaryContainers}>
@@ -630,7 +627,7 @@ class LandingPage extends React.Component {
               marginRight: 450,
               paddingBottom: 20,
             }}
-            align='center'
+            align="center"
           >
             <Typography
               style={{

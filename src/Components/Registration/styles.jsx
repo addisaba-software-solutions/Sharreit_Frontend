@@ -16,6 +16,12 @@ export default makeStyles((theme) => ({
     width: 225,
     animation: `fade-in ${easings.easeOutQuart} 5000ms forwards`,
   },
+  stepper: {
+    backgroundColor: "#F3FCF4",
+  },
+  active: {
+    color: "#008060",
+  },
   paperContainer: {
     backgroundColor: "#F3FCF4",
   },
