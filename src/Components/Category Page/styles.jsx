@@ -5,7 +5,7 @@ const classes = {
     backgroundColor: '#F3FCF4',
     marginLeft: 30,
     marginRight: 30,
-    padding: 15,
+    padding: 15
   },
   
   container: {
@@ -50,7 +50,10 @@ const classes = {
   premiumAdHolder: {
     display: "flex",
     flexDirection: "row",
-    width: "fit-content"
+    width: "100%",
+    whiteSpace: "noWrap",
+    overflowX: "auto",
+    overflowY: "hidden"
   },
 
   premiumAd: {

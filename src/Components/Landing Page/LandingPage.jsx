@@ -267,7 +267,7 @@ class LandingPage extends React.Component {
         <Box style={{ height: 30 }} />
 
         <Grid xs={12} align="left">
-            <AnimatedButtons start={true} />
+            <AnimatedButtons start={true} amount={6} />
         </Grid>
         <Grid xs={12} align="center">
           <IconButton>

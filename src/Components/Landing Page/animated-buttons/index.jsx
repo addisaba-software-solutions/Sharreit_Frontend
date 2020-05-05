@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react'
-import { Grid, Zoom } from '@material-ui/core'
+import { Grid, Zoom, Typography, Fade } from '@material-ui/core'
+import clsx from 'clsx'
 import useStyles from './styles'
 import image from './img/download.jpg'
 
-const Example = ({ start }) => {
+const Example = ({ start, amount }) => {
     const classes = useStyles()
-    const AMOUNT_OF_BUBBLES = 6
     const [state, setState] = React.useState({
-        cars: Array(AMOUNT_OF_BUBBLES).fill(false),
+        cars: Array(amount).fill(false)
+    })
+
+    const [note, setNote] = React.useState({
+        sideNotes: Array(amount).fill(false)
     })
 
     const MAX_BUBBLES = state.cars.length
@@ -32,15 +36,39 @@ const Example = ({ start }) => {
         }
     }
 
+    const openSideNote = (index) => {
+        var { sideNotes } = note
+        sideNotes[index] = true
+        setNote({ sideNotes })
+    }
+
+    const closeSideNote = (index) => {
+        var { sideNotes } = note
+        sideNotes[index] = false
+        setNote({ sideNotes })
+    }
+    console.log(note.sideNotes)
     return (
-        <Grid className={classes.root} container xs={12}>
-            <Grid container xs={12} className={classes.root}>
+        <Grid className={classes.root} container>
+            <Grid item xs={12} className={classes.root}>
                 {
                     state.cars.map((item, index) => (
                         <Grid item xs={12} key={index}>
-                            <Zoom in={state.cars[index]} timeout={1000}>
-                                <img src={image} className={classes.animated} alt="Car" />
-                            </Zoom>
+                            <div onMouseEnter={() => openSideNote(index)} onMouseLeave={() => closeSideNote(index)} className={classes.container}>
+                                <Zoom in={state.cars[index]} timeout={1000}>
+                                    <img src={image} className={classes.animated} alt="Car" />
+                                </Zoom>
+                                <Fade in={note.sideNotes[index]} timeout={900}>
+                                    <div className={classes.sideCaption}>
+                                        <Typography variant="h6">
+                                            Volkswaggen
+                                        </Typography>
+                                        <p>
+                                            The amazing family car that will take you anywhere you want, and something something.
+                                        </p>
+                                    </div>
+                                </Fade>
+                            </div>
                         </Grid>
                     ))
                 }
