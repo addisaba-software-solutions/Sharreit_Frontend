@@ -34,7 +34,7 @@ const CategoriesView = () => {
         <Header />
         {/* End of AppBar Portion ? */}
         <Box style={{ height: 80 }} />
-        <div style={classes.premiumAdHolder} id="premiumAdHolder">
+        {/* <div style={classes.premiumAdHolder} id="premiumAdHolder">
           <a onClick={scroll.bind(null, -1)}>&#10094;</a>
           {
             ads.categories.map((item, index) => (
@@ -42,7 +42,7 @@ const CategoriesView = () => {
             ))
           }
           <a onClick={scroll.bind(null, 1)}>&#10094;</a>
-        </div>
+        </div> */}
         { <Categories /> }
       </Box>
     </>
