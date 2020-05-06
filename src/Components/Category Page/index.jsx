@@ -25,7 +25,7 @@ const CategoriesView = () => {
 
   const SCROLL_THRESHOLD = 200
   var SCROLLED_AMOUNT = 0
-  const WAIT_TIME = 400
+  const WAIT_TIME = 300
   const MAX_WIDTH = (ads.categories.length - 3.5) * 420
   var direction = "right"
 
