@@ -232,7 +232,7 @@ export default function SignupSide() {
             </FormHelperText>
           </Grid>
         </Grid>
-        <Grid xs={12} align="center">
+        {/* <Grid xs={12} align="center">
           <Button
             type="submit"
             // fullWidth
@@ -244,7 +244,7 @@ export default function SignupSide() {
           >
             Register
           </Button>
-        </Grid>
+        </Grid> */}
       </form>
     </Grid>
   );

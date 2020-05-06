@@ -15,12 +15,17 @@ export default function ViewAllItems() {
       <main style={classes.root}>
         <Grid container xs={12}>
           <Grid item xs={3}>
+            <Typography style={classes.headers}>
+              Filter Your Search
+            </Typography>
             <Filter />
             <Divider />
           </Grid>
           <Grid item xs={9}>
-            <ItemsView />
-            <Divider />
+          <Typography style={classes.headers}>
+              Category Descreption Goes Here
+            </Typography>
+            <ItemsView  />
           </Grid>
         </Grid>
       </main>
