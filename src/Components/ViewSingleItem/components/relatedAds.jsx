@@ -1,9 +1,6 @@
 import React from "react";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Box, Grid, List, Card, Paper } from "@material-ui/core";
 import Something from "../../../Assets/Rentalhouse.jpg";
-import Car from "../../../Assets/SomeCar.jpg";
-
-import styles from "../../AddItem/styles";
 
 const classes = {
   title: {
@@ -22,14 +19,19 @@ const classes = {
   },
   relatedAdsTitle: {
     paddingTop: 10,
-
-      color: '#004C3F',
-      fontWeight: 600
+    color: "#004C3F",
+    fontWeight: 600,
   },
   relatedAdsBody: {
-      paddingTop: 10,
-    color: '#004C3F',
-}
+    paddingTop: 10,
+    color: "#004C3F",
+  },
+  relatedAdsContainer: {
+    maxHeight: 600,
+    overflow: "auto",
+    backgroundColor: "#F3FCF4",
+    boxShadow: 0,
+  },
 };
 export default function relatedAds() {
   return (
@@ -39,42 +41,80 @@ export default function relatedAds() {
           Related Ads
         </Typography>
       </Grid>
-      <Grid container xs={12} style={classes.relatedAds}>
-        <Grid xs={6} align="left">
-          <img src={Something} style={classes.relatedAdsPicture} alt="" />
-        </Grid>
-        <Grid xs={6} align='left'>
-            <Typography style={classes.relatedAdsTitle} >
-            House For Rent 
-            House For Rent 
-            House For Rent 
-            </Typography>
-            <Typography style={classes.relatedAdsBody} >
-            600$/ Day
-            </Typography>
-            <Typography style={classes.relatedAdsBody} >
-            Rent Count: 34 Times 
-            </Typography>
+      <Box style={classes.relatedAdsContainer}>
+        <List>
+          <Grid container xs={12} style={classes.relatedAds}>
+            <Grid xs={6} align="left">
+              <img src={Something} style={classes.relatedAdsPicture} alt="" />
             </Grid>
-      </Grid>
-      <Grid container xs={12} style={classes.relatedAds}>
-        <Grid xs={6} align="left">
-          <img src={Something} style={classes.relatedAdsPicture} alt="" />
-        </Grid>
-        <Grid xs={6} align='left'>
-            <Typography style={classes.relatedAdsTitle} >
-            House For Rent 
-            House For Rent 
-            House For Rent 
-            </Typography>
-            <Typography style={classes.relatedAdsBody} >
-            600$/ Day
-            </Typography>
-            <Typography style={classes.relatedAdsBody} >
-            Rent Count: 34 Times 
-            </Typography>
+            <Grid xs={6} align="left">
+              <Typography style={classes.relatedAdsTitle}>
+                House For Rent House For Rent House For Rent
+              </Typography>
+              <Typography style={classes.relatedAdsBody}>600$/ Day</Typography>
+              <Typography style={classes.relatedAdsBody}>
+                Rent Count: 34 Times
+              </Typography>
             </Grid>
-      </Grid>
+          </Grid>
+          <Grid container xs={12} style={classes.relatedAds}>
+            <Grid xs={6} align="left">
+              <img src={Something} style={classes.relatedAdsPicture} alt="" />
+            </Grid>
+            <Grid xs={6} align="left">
+              <Typography style={classes.relatedAdsTitle}>
+                House For Rent House For Rent House For Rent
+              </Typography>
+              <Typography style={classes.relatedAdsBody}>600$/ Day</Typography>
+              <Typography style={classes.relatedAdsBody}>
+                Rent Count: 97 Times
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container xs={12} style={classes.relatedAds}>
+            <Grid xs={6} align="left">
+              <img src={Something} style={classes.relatedAdsPicture} alt="" />
+            </Grid>
+            <Grid xs={6} align="left">
+              <Typography style={classes.relatedAdsTitle}>
+                House For Rent House For Rent House For Rent
+              </Typography>
+              <Typography style={classes.relatedAdsBody}>600$/ Day</Typography>
+              <Typography style={classes.relatedAdsBody}>
+                Rent Count: 97 Times
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container xs={12} style={classes.relatedAds}>
+            <Grid xs={6} align="left">
+              <img src={Something} style={classes.relatedAdsPicture} alt="" />
+            </Grid>
+            <Grid xs={6} align="left">
+              <Typography style={classes.relatedAdsTitle}>
+                House For Rent House For Rent House For Rent
+              </Typography>
+              <Typography style={classes.relatedAdsBody}>600$/ Day</Typography>
+              <Typography style={classes.relatedAdsBody}>
+                Rent Count: 97 Times
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container xs={12} style={classes.relatedAds}>
+            <Grid xs={6} align="left">
+              <img src={Something} style={classes.relatedAdsPicture} alt="" />
+            </Grid>
+            <Grid xs={6} align="left">
+              <Typography style={classes.relatedAdsTitle}>
+                House For Rent House For Rent House For Rent
+              </Typography>
+              <Typography style={classes.relatedAdsBody}>600$/ Day</Typography>
+              <Typography style={classes.relatedAdsBody}>
+                Rent Count: 97 Times
+              </Typography>
+            </Grid>
+          </Grid>
+        </List>
+      </Box>
     </>
   );
 }

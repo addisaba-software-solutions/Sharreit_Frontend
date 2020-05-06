@@ -9,6 +9,11 @@ const classes = {
   appbarShift: {
     paddingBottom: 100,
   },
+  singleItemView: {
+    // paddingLeft: 200,
+    // paddingRight: 200,
+
+  }
 };
 
 export default classes;
