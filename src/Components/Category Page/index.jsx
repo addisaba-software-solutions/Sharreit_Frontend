@@ -23,10 +23,10 @@ const CategoriesView = () => {
     categories: Array(11).fill(tempObject),
   })
 
-  const SCROLL_THRESHOLD = 200
+  const SCROLL_THRESHOLD = 50
   var SCROLLED_AMOUNT = 0
-  const WAIT_TIME = 300
-  const MAX_WIDTH = (ads.categories.length - 3.5) * 420
+  const WAIT_TIME = 70
+  const MAX_WIDTH = (ads.categories.length + ads.categories.length) * 420
   var direction = "right"
 
   const goLeft = () => {

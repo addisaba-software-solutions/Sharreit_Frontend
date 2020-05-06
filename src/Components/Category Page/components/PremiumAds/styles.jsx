@@ -6,8 +6,8 @@ export default makeStyles(theme => ({
         display: "flex",
         justifyContent: "center",
         borderRadius: 10,
-        width: 400,
-        height: 200,
+        width: 550,
+        height: 300,
         flexDirection: "column",
         marginRight: 20,
         marginBottom: 20,
@@ -15,8 +15,8 @@ export default makeStyles(theme => ({
     },
 
     image: {
-        width: 400,
-        height: 170
+        width: 550,
+        height: 270
     },
 
     actionArea: {
