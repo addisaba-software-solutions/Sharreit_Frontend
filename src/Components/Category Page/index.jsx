@@ -4,9 +4,9 @@ import { ChevronLeft, ChevronRight } from '@material-ui/icons'
 import Header from "./components/AppBar";
 import PremiumAd from "./components/PremiumAds/";
 import Categories from "./components/categoriesCard";
-import CarImage from "../../Assets/SomeCar.jpg";
 import classes from "./styles";
 import routes from '../../Config/routes'
+import Something from "../../Assets/Rentalhouse.jpg";
 
 const CategoriesView = () => {
   const routeChange = () => {
@@ -17,14 +17,12 @@ const CategoriesView = () => {
 
   const tempObject = {
     caption: "An amazing sports car",
-    picture: CarImage,
+    picture: Something,
   }
 
   const [ads, setAds] = React.useState({
     categories: Array(11).fill(tempObject)
   })
-
-  const [hover, setHover] = React.useState(false)
 
   const SCROLL_THRESHOLD = 50
   var SCROLLED_AMOUNT = 0

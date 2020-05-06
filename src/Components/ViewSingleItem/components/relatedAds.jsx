@@ -21,10 +21,12 @@ const classes = {
     paddingTop: 10,
     color: "#004C3F",
     fontWeight: 600,
+    paddingLeft: 10,
   },
   relatedAdsBody: {
     paddingTop: 10,
-    color: "#004C3F",
+    // color: "#004C3F",
+    paddingLeft: 10,
   },
   relatedAdsContainer: {
     maxHeight: 600,
