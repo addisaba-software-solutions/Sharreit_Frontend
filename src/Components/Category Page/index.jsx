@@ -6,6 +6,8 @@ import Categories from "./components/categoriesCard";
 import CarImage from "../../Assets/SomeCar.jpg";
 import classes from "./styles";
 import routes from '../../Config/routes'
+import Something from "../../Assets/Rentalhouse.jpg";
+
 
 const CategoriesView = () => {
   const routeChange = () => {
@@ -16,7 +18,7 @@ const CategoriesView = () => {
 
   const tempObject = {
     caption: "An amazing sports car",
-    picture: CarImage,
+    picture: Something,
   }
 
   const [ads, setAds] = React.useState({

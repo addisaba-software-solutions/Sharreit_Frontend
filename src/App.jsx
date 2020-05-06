@@ -19,6 +19,7 @@ const App = () => {
         <Route path={routes.addItem} component={AddItem} exact />
         <Route path={routes.singleItem} component={SingleItem} exact />
 
+
       </Switch>
     </BrowserRouter>
   );
