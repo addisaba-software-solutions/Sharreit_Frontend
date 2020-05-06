@@ -5,7 +5,7 @@ import classes from "./styles";
 import { Grid, Divider, Typography, Box } from "@material-ui/core";
 import Profile from "./components/profile";
 import RelatedAds from "./components/relatedAds";
-
+import ItemView from "./components/itemView";
 
 export default function SingleItem() {
   return (
@@ -13,24 +13,27 @@ export default function SingleItem() {
       <Grid xs={12} style={classes.appbarShift}>
         <Header />
       </Grid>
-      <Grid container xs={12}>
-        <Grid item xs={9} alignment="column">
-          Item Information Goes Here
+      <Grid container xs={12} spacing={3}>
+        <Grid item xs={9} style={classes.singleItemView}>
+          <ItemView />
         </Grid>
         <Grid item xs={3} style={classes.divider} align="center">
           <Grid item>
             <Profile />
           </Grid>
-          <Box style={{
-            height: 10
-        }}/>
+          <Box
+            style={{
+              height: 10,
+            }}
+          />
           <Divider></Divider>
-          <Box style={{
-            height: 10
-        }}/>
+          <Box
+            style={{
+              height: 10,
+            }}
+          />
           <Grid item>
-              <RelatedAds />
-
+            <RelatedAds />
           </Grid>
         </Grid>
       </Grid>
