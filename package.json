@@ -4,18 +4,12 @@
   "private": true,
   "engines": {
     "node": "12.16.2",
-    "npm": "6.14.4"
+    "yarn": "1.22.4"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
     "@testing-library/react": "^10.0.3",
-    "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.4",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.6",
-    "@types/react-router": "^5.1.5",
-    "@types/react-router-dom": "^5.1.4",
     "axios": "^0.19.2",
     "cloudinary-react": "^1.5.0",
     "cra-template-typescript": "1.0.3",
@@ -29,9 +23,7 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "react-scroll-horizontal": "^1.6.4",
-    "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3"
+    "react-scroll-horizontal": "^1.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -52,5 +44,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:3000"
 }
