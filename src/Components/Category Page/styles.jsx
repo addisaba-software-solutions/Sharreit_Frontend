@@ -1,4 +1,3 @@
-
 const classes = {
   root: {
     backgroundColor: '#F3FCF4',
@@ -46,18 +45,18 @@ const classes = {
     width: 80,
   },
 
-  premiumAdHolder: {
-    display: "flex",
-    flexDirection: "row",
+  scrollWrapper: {
+    overflowX: "hidden",
+    overflowY: "hidden",
+    whiteSpace: "nowrap",
     width: "100%",
-    whiteSpace: "noWrap",
-    overflowX: "auto",
-    overflowY: "hidden"
+    scrollBehavior: "smooth",
   },
 
-  premiumAd: {
-    marginRight: 10
-  }
+  card: {
+    display: "inline-block",
+    margin: 10
+  },
 
 }
 

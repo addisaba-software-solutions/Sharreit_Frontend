@@ -6,18 +6,18 @@ import SignIn from "./Components/SignIn/";
 import CategoryPage from "./Components/Category Page/";
 import LandingPage from "./Components/Landing Page/LandingPage";
 import SingleItem from "./Components/ViewSingleItem/";
-
+import routes from './Config/routes'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={LandingPage} exact />
-        <Route path="/signIn" component={SignIn} exact />
-        <Route path="/CategoryPage" component={CategoryPage} exact />
-        <Route path="/Registration" component={Registration} exact />
-        <Route path="/AddItem" component={AddItem} exact />
-        <Route path="/SingleItem" component={SingleItem} exact />
+        <Route path={routes.root} component={LandingPage} exact />
+        <Route path={routes.signIn} component={SignIn} exact />
+        <Route path={routes.category} component={CategoryPage} exact />
+        <Route path={routes.registration} component={Registration} exact />
+        <Route path={routes.addItem} component={AddItem} exact />
+        <Route path={routes.singleItem} component={SingleItem} exact />
 
       </Switch>
     </BrowserRouter>

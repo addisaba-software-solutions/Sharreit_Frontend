@@ -2,9 +2,9 @@ import React from "react";
 import { Typography, Card ,Paper, CardContent, CardHeader, CardActionArea, CardMedia } from "@material-ui/core";
 import useStyles from './styles'
 import Picture from '../../../../Assets/SomeCar.jpg'
-// import {
-//     Visibility
-// } from '@material-ui/icons'
+import {
+    Visibility
+} from '@material-ui/icons'
 
 export default function PremiumAds({ caption, picture }) {
     const classes = useStyles()
@@ -18,7 +18,7 @@ export default function PremiumAds({ caption, picture }) {
                 <Typography className={classes.cardText}>
                     {caption}
                 </Typography>
-                <Typography>eye</Typography>
+                <Visibility />
             </CardActionArea>
         </Card>
 );

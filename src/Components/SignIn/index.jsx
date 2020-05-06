@@ -17,6 +17,7 @@ import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Logo from "../../Assets/Group.svg";
 import useStyles from "./styles";
 import { fields } from "./data";
+import routes from '../../Config/routes'
 
 function Copyright() {
   return (
@@ -145,7 +146,7 @@ export default function SignIn() {
               <Grid item>
                 <Link
                   className={classes.primary}
-                  href="/Registration"
+                  href={routes.registration}
                   variant="caption"
                 >
                   {"Don't have an account? Sign Up"}

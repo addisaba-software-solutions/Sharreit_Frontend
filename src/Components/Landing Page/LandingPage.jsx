@@ -19,6 +19,7 @@ import {
 import Logo from "../../Assets/Group.svg";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AnimatedButtons from "./animated-buttons";
+import routes from '../../Config/routes'
 
 class LandingPage extends React.Component {
   constructor() {
@@ -27,7 +28,7 @@ class LandingPage extends React.Component {
   }
 
   routeChange() {
-    this.props.history.push("/signIn");
+    this.props.history.push(routes.signIn);
   }
   render() {
     return (

@@ -3,3 +3,5 @@ export default {
     secondaryColor: '#',
     teritiaryColor: '#'
 }
+
+export const REPO_ADDRESS = "Sharreit_Frontend"
