@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import {
   Avatar,
@@ -31,30 +28,28 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      SharreIt :   
-      {new Date().getFullYear()}
+      SharreIt :{new Date().getFullYear()}
       {"."}
     </Typography>
   );
 }
 
-
-const steps = ['Personal Information', 'Something Something', 'Something Something'];
+const steps = [
+  "Personal Information",
+  "Something Something",
+  "Something Something",
+];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <PersonalInformation />
+      return <PersonalInformation />;
     case 1:
-      return <Typography>
-      one
-    </Typography>;
+      return <Typography>one</Typography>;
     case 2:
-      return <Typography>
-      two
-    </Typography>;
+      return <Typography>two</Typography>;
     default:
-      throw new Error('Unknown step');
+      throw new Error("Unknown step");
   }
 }
 export default function Registration() {
@@ -90,48 +85,50 @@ export default function Registration() {
             <Typography component="h1" variant="h5">
               Sign Up
             </Typography>
-        <Stepper activeStep={activeStep} alternativeLabel className={classes.stepper}>
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel>{label}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-          <React.Fragment>
-            {activeStep === steps.length ? (
-              <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order confirmation, and will
-                  send you an update when your order has shipped.
-                </Typography>
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                {getStepContent(activeStep)}
-                <div className={classes.buttons}>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Back
+            <Stepper
+              activeStep={activeStep}
+              alternativeLabel
+              className={classes.stepper}
+            >
+              {steps.map((label) => (
+                <Step key={label}>
+                  <StepLabel>{label}</StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+            <React.Fragment>
+              {activeStep === steps.length ? (
+                <React.Fragment>
+                  <Typography variant="h5" gutterBottom>
+                    Thank you for your order.
+                  </Typography>
+                  <Typography variant="subtitle1">
+                    Your order number is #2001539. We have emailed your order
+                    confirmation, and will send you an update when your order
+                    has shipped.
+                  </Typography>
+                </React.Fragment>
+              ) : (
+                <React.Fragment>
+                  {getStepContent(activeStep)}
+                  <div className={classes.buttons}>
+                    {activeStep !== 0 && (
+                      <Button onClick={handleBack} className={classes.button}>
+                        Back
+                      </Button>
+                    )}
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={handleNext}
+                      className={classes.button}
+                    >
+                      {activeStep === steps.length - 1 ? "Place order" : "Next"}
                     </Button>
-                  )}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
-                  </Button>
-                </div>
-              </React.Fragment>
-            )}
-          </React.Fragment>
-
-      
-
+                  </div>
+                </React.Fragment>
+              )}
+            </React.Fragment>
           </Box>
           <Copyright />
         </Grid>

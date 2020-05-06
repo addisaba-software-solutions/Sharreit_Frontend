@@ -79,7 +79,6 @@ const CategoriesView = () => {
         {<Categories />}
         {<Categories />}
         {<Categories />}
-        {<Categories />}
       </Box>
     </>
   );
