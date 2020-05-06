@@ -57,6 +57,17 @@ const classes = {
     display: "inline-block",
     margin: 10
   },
+  
+  leftButton: {
+      position: 'absolute',
+      marginBottom: 134,
+      top: 114,
+      backgroundColor: "#000",
+      height: 302,
+      left: 45,
+      opacity: 0.5,
+      color: "#fff"
+  }
 
 }
 

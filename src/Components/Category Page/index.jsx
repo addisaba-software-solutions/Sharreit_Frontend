@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Paper } from "@material-ui/core"
+import { Box, Button, Fade } from "@material-ui/core"
+import { ChevronLeft, ChevronRight } from '@material-ui/icons'
 import Header from "./components/AppBar";
 import PremiumAd from "./components/PremiumAds/";
 import Categories from "./components/categoriesCard";
@@ -20,13 +21,15 @@ const CategoriesView = () => {
   }
 
   const [ads, setAds] = React.useState({
-    categories: Array(11).fill(tempObject),
+    categories: Array(11).fill(tempObject)
   })
+
+  const [hover, setHover] = React.useState(false)
 
   const SCROLL_THRESHOLD = 50
   var SCROLLED_AMOUNT = 0
   const WAIT_TIME = 70
-  const MAX_WIDTH = (ads.categories.length + ads.categories.length) * 420
+  const MAX_WIDTH = (ads.categories.length * 10) * 500
   var direction = "right"
 
   const goLeft = () => {
@@ -41,7 +44,7 @@ const CategoriesView = () => {
     scrollRef.current.scrollLeft += SCROLL_THRESHOLD
   }
 
-  const infiniteScroller = () => {
+  const infiniteScroller = async () => {
     if (SCROLLED_AMOUNT >= MAX_WIDTH) {
       if (direction === "right") {
         direction = "left"
@@ -52,11 +55,10 @@ const CategoriesView = () => {
       }
     }
     direction === "left"?  goLeft() : goRight()
-    setTimeout(() => infiniteScroller(), WAIT_TIME)
   }
 
   React.useEffect(() => {
-      infiniteScroller()
+    setInterval(() => infiniteScroller(), WAIT_TIME);
   })
 
   return (
@@ -67,13 +69,16 @@ const CategoriesView = () => {
         <Box style={{ height: 80 }} />
           <div style={classes.scrollWrapper} ref={scrollRef}>
             {ads.categories.map((item, index) => (
-                <div style={classes.card}>
+                <div style={classes.card} key={index}>
                   <PremiumAd caption={item.caption + " " + index} picture={item.picture} />
               </div>
             ))}
           </div>
-          <button onClick={goLeft}>Go Left</button>
-          <button onClick={goRight}>Go Right</button>
+          {/* <Fade in={hover} timeout={700}>
+            <Button style={classes.leftButton} onClick={goLeft}>
+                <ChevronLeft />
+            </Button>
+          </Fade> */}
         {<Categories />}
       </Box>
     </>
