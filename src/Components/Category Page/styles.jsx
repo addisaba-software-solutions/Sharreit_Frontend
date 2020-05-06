@@ -1,8 +1,8 @@
 const classes = {
   root: {
     backgroundColor: '#F3FCF4',
-    marginLeft: 30,
-    marginRight: 30,
+    marginLeft: 20,
+    marginRight: 20,
     padding: 15
   },
   

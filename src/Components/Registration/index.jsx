@@ -38,31 +38,8 @@ function Copyright() {
   );
 }
 
-export default function SignupSide() {
+export default function Registration() {
   const classes = useStyles();
-
-  const steps = ["Personal Information", "Image Upload"];
-
-  function getStepContent(step) {
-    switch (step) {
-      case 0:
-        return <PersonalInformation />;
-      case 1:
-        return <ImageUpload />;
-      default:
-        throw new Error("Unknown step");
-    }
-  }
-
-  const [activeStep, setActiveStep] = React.useState(0);
-
-  const handleNext = () => {
-    setActiveStep(activeStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep(activeStep - 1);
-  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -86,44 +63,7 @@ export default function SignupSide() {
             Sign Up
           </Typography>
 
-          <Stepper activeStep={activeStep} color='secondary' className={classes.stepper}>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          <React.Fragment>
-            {activeStep === steps.length ? (
-              <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Registered
-                </Typography>
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                {getStepContent(activeStep)}
-                <div className={classes.buttons}
-                
-                className={clsx(classes.buttons, classes.active
-                )}>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Back
-                    </Button>
-                  )}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.submit}
-                  >
-                    {activeStep === steps.length - 1 ? "Register" : "Next"}
-                  </Button>
-                </div>
-              </React.Fragment>
-            )}
-          </React.Fragment>
+    <PersonalInformation />
         </Box>
       </Grid>
       <Grid item xs={false} sm={4} md={7} className={classes.image} />

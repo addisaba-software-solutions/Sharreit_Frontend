@@ -6,8 +6,7 @@ export default makeStyles(theme => ({
         display: "flex",
         justifyContent: "center",
         borderRadius: 10,
-        width: 550,
-        height: 300,
+        height: 550,
         flexDirection: "column",
         marginRight: 20,
         marginBottom: 20,
@@ -15,21 +14,10 @@ export default makeStyles(theme => ({
     },
 
     image: {
-        width: 550,
-        height: 270
+        width: 'auto',
+        height: 'auto'
     },
 
-    actionArea: {
-        backgroundColor: "#376ec1",
-        height: 30,
-        color: '#fff',
-        paddingLeft: 10,
-        paddingRight: 10,
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center"
-    },
 
     cardText: {
         fontWeight: 500

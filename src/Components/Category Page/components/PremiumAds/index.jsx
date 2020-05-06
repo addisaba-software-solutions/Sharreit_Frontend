@@ -14,12 +14,6 @@ export default function PremiumAds({ caption, picture }) {
             <CardMedia className={classes.image}>
                 <img src={picture} alt="Car" className={classes.image} />
             </CardMedia>
-            <CardActionArea className={classes.actionArea}>
-                <Typography className={classes.cardText}>
-                    {caption}
-                </Typography>
-                <Visibility />
-            </CardActionArea>
         </Card>
 );
 }
