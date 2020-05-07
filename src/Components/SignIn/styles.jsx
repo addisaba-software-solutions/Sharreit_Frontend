@@ -59,4 +59,10 @@ export default makeStyles((theme) => ({
   FormHelperText: {
     marginLeft: 100,
   },
+
+  loading: {
+    margin: 20,
+    fontWeight: 600
+  }
+
 }));

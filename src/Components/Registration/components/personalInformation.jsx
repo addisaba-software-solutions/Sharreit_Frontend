@@ -232,19 +232,19 @@ export default function SignupSide() {
             </FormHelperText>
           </Grid>
         </Grid>
-        {/* <Grid xs={12} align="center">
+        <Grid xs={12} align="center">
           <Button
             type="submit"
             // fullWidth
             variant="contained"
             className={classes.submit}
-            // onClick={handleClick}
-            href="/CategoryPage"
+            onClick={handleClick}
+            // href="/CategoryPage"
             onClick={handleClick}
           >
             Register
           </Button>
-        </Grid> */}
+        </Grid>
       </form>
     </Grid>
   );

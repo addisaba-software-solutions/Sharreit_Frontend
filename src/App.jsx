@@ -6,6 +6,8 @@ import SignIn from "./Components/SignIn/";
 import CategoryPage from "./Components/Category Page/";
 import LandingPage from "./Components/Landing Page/LandingPage";
 import SingleItem from "./Components/ViewSingleItem/";
+import AllItems from "./Components/ViewAllItems";
+
 import routes from './Config/routes'
 
 const App = () => {
@@ -18,8 +20,7 @@ const App = () => {
         <Route path={routes.registration} component={Registration} exact />
         <Route path={routes.addItem} component={AddItem} exact />
         <Route path={routes.singleItem} component={SingleItem} exact />
-
-
+        <Route path={routes.AllItems} component={AllItems} exact />
       </Switch>
     </BrowserRouter>
   );

@@ -73,6 +73,10 @@ const classes = {
     marginTop: 10,
     color: "#008060",
   },
+  TermAndCondition: {
+    backgroundColor: "#008060",
+    color: "#FFFFFF",
+  },
 };
 
 export default () => {
@@ -249,7 +253,11 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
             <div style={classes.spacing} />
 
             <Grid xs={12} item align="center">
-              <Button variant="contained" onClick={handleClickOpen()}>
+              <Button
+                variant="contained"
+                style={classes.TermAndCondition}
+                onClick={handleClickOpen()}
+              >
                 Terms And Conditions of this Item
               </Button>
             </Grid>

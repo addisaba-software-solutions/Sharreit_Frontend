@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react" 
 import {
   TextField,
   Avatar,
@@ -18,6 +18,8 @@ import Logo from "../../Assets/Group.svg";
 import useStyles from "./styles";
 import { fields } from "./data";
 import routes from '../../Config/routes'
+import keys from '../../Config/keys'
+import signIn from './functions/signIn'
 
 function Copyright() {
   return (
@@ -29,29 +31,44 @@ function Copyright() {
   );
 }
 
-export default function SignIn() {
+export default function SignIn({ history }) {
   const classes = useStyles();
 
   const [state, setState] = React.useState({
     email: "",
     password: "",
-  });
+  })
 
   const [form, setForm] = React.useState({
     email: fields.email,
     password: fields.password,
-  });
+  })
 
-  const handleClick = (event) => {
-    event.preventDefault();
+  const [loading, setLoading] = React.useState(false)
+
+  const handleClick = async (event) => {
+    var complete = true
+    event.preventDefault()
     for (var element in state) {
       if (state[element] === "") {
-        var update = form[element];
-        update.error = !form[element].error;
-        setForm({ ...form, [element]: update });
+        complete = false
+        var update = form[element]
+        update.error = !form[element].error
+        setForm({ ...form, [element]: update })
+      } else if (state[element] !== '' && form[element]['error']) {
+        update['error'] = !form[element]['error']
+        setForm({ ...form, [element]: update })
       }
     }
-  };
+    if (complete) {
+      setLoading(true)
+      const response = await signIn(state.email, state.password)
+      if (response.token !== "") {
+        sessionStorage.setItem(keys['TOKEN'], response.token)
+        history.push(routes.root)
+      }
+    }
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -125,16 +142,22 @@ export default function SignIn() {
               label="Remember me"
             />
             <Grid xs={12} align="center">
-              <Button
-                type="submit"
-                // fullWidth
-                variant="contained"
-                className={classes.submit}
-                onClick={handleClick}
-                // href="/CategoryPage"
-              >
-                Sign In
-              </Button>
+              {
+                loading ? <Typography variant="body1" className={classes.loading}>Please wait for a moment</Typography>
+                : (
+                  <Button
+                    type="submit"
+                    // fullWidth
+                    variant="contained"
+                    className={classes.submit}
+                    onClick={handleClick}
+                    // href="/CategoryPage"
+                  >
+                    Sign In
+                  </Button>
+                )
+                
+              }
             </Grid>
 
             <Grid container>
