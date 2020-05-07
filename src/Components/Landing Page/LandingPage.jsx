@@ -7,7 +7,7 @@ import bulldozer from "../../Assets/bulldozer2.jpg";
 import classes from "./styles";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Boat from "../../Assets/boatss.png";
-import fetchUserInfo from './functions/fetchUserInfo'
+import fetchUserInfo from "./functions/fetchUserInfo";
 import {
   Button,
   Typography,
@@ -21,8 +21,8 @@ import Logo from "../../Assets/Group.svg";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AnimatedButtons from "./animated-buttons";
 import routes from "../../Config/routes";
-import keys from '../../Config/keys'
-import fetchAllItems from './functions/fetchItems'
+import keys from "../../Config/keys";
+import fetchAllItems from "./functions/fetchItems";
 
 class LandingPage extends React.Component {
   constructor() {
@@ -37,17 +37,17 @@ class LandingPage extends React.Component {
   gotoCategory(type) {
     this.props.history.push({
       pathname: routes.category,
-      state: { type }
-    })
+      state: { type },
+    });
   }
 
   async componentDidMount() {
-    const token = sessionStorage.getItem(keys['TOKEN'])
+    const token = sessionStorage.getItem(keys["TOKEN"]);
     if (typeof token === "string") {
       //await fetchUserInfo()
     }
 
-    await fetchAllItems()
+    await fetchAllItems();
   }
 
   render() {

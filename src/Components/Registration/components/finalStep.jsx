@@ -28,7 +28,7 @@ export default function FinalStep({ form, handleChange }) {
             error={form.phoneNumber.error}
             onChange={handleChange}
           /> */}
-          <MuiPhoneNumber defaultCountry={"us"} onChange={handleChange} name="phoneNumber" />
+          <MuiPhoneNumber defaultCountry={"us"} onChange={value=> handleChange({ target: { name: "phoneNumber", value } })} name="phoneNumber" />
           <FormHelperText error={form.phoneNumber.error}>
             {form.phoneNumber.error ? form.phoneNumber.errorText : ""}
           </FormHelperText>
