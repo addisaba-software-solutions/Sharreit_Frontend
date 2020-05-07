@@ -37,7 +37,7 @@ class LandingPage extends React.Component {
   gotoCategory(type) {
     this.props.history.push({
       pathname: routes.category,
-      state: { type },
+      state: { type }, 
     });
   }
 
