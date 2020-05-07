@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AddItem from "./Components/AddItem/";
+import Registration from "./Components/Registration";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import SignIn from "./Components/SignIn/";
+import CategoryPage from "./Components/Category Page/";
+import LandingPage from "./Components/Landing Page/LandingPage";
+import SingleItem from "./Components/ViewSingleItem/";
+import AllItems from "./Components/ViewAllItems";
+import routes from "./Config/routes";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path={routes.root} component={LandingPage} exact />
+        <Route path={routes.signIn} component={SignIn} exact />
+        <Route path={routes.category} component={CategoryPage} exact />
+        <Route path={routes.registration} component={Registration} exact />
+        <Route path={routes.addItem} component={AddItem} exact />
+        <Route path={routes.singleItem} component={SingleItem} exact />
+        <Route path={routes.AllItems} component={AllItems} exact />
+      </Switch>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
