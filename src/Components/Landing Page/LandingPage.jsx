@@ -48,8 +48,6 @@ class LandingPage extends React.Component {
       sessionStorage.setItem(keys['FULL_NAME'], firstName + " " + lastName)
       this.setState({ name: firstName + " " + lastName })
     }
-
-    await fetchAllItems();
   }
 
   render() {

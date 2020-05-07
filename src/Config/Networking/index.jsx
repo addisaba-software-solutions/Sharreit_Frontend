@@ -16,7 +16,7 @@ export const sendGetRequestWithToken = async (url) => {
     const requestOptions = {
         method: "GET",
         headers: {
-            'Authorization': bearer
+            'Authorization': "Bearer " + sessionStorage.getItem(keys['TOKEN'])
         }
     }
     const response = await fetch(url, requestOptions)

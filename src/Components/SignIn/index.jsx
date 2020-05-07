@@ -62,9 +62,9 @@ export default function SignIn({ history }) {
     }
     if (complete) {
       setLoading(true)
-      const response = await signIn(state.email, state.password)
-      if (response.token !== "") {
-        sessionStorage.setItem(keys['TOKEN'], response.token)
+      const { data } = await signIn(state.email, state.password)
+      if (data.token !== "") {
+        sessionStorage.setItem(keys['TOKEN'], data.token)
         history.push(routes.root)
       }
     }
