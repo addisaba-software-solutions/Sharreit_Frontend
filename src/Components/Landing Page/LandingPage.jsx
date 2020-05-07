@@ -27,7 +27,7 @@ import fetchAllItems from './functions/fetchItems'
 class LandingPage extends React.Component {
   constructor() {
     super();
-    this.state = { animationStart: false };
+    this.state = { animationStart: false, name: "" };
   }
 
   routeChange() {
@@ -37,7 +37,9 @@ class LandingPage extends React.Component {
   async componentDidMount() {
     const token = sessionStorage.getItem(keys['TOKEN'])
     if (typeof token === "string") {
-      //await fetchUserInfo()
+      const { firstName, lastName } = await fetchUserInfo()
+      sessionStorage.setItem(keys['FULL_NAME'], firstName + " " + lastName)
+      this.setState({ name: firstName + " " + lastName })
     }
 
     await fetchAllItems()
@@ -131,22 +133,30 @@ class LandingPage extends React.Component {
                       </Grid>
                     </Button>
                   </Grid>
+                  {
+                    this.state.name === "" ? (
+                      <Grid item>
+                      <Button
+                        onClick={this.routeChange.bind(this)}
+                        style={classes.Headertext2}
+                      >
+                        LOGIN
+                      </Button>
+                    </Grid>
+                    ) : ""
+                  }
                   <Grid item>
-                    <Button
-                      onClick={this.routeChange.bind(this)}
-                      style={classes.Headertext2}
-                    >
-                      LOGIN
-                    </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button
-                      align="right"
-                      variant="contained"
-                      style={classes.button}
-                    >
-                      Categories
-                    </Button>
+                    {
+                      this.state.name === "" ? (
+                        <Button
+                          align="right"
+                          variant="contained"
+                          style={classes.button}
+                        >
+                          Categories
+                        </Button>
+                      ) : <Typography style={classes.user_name} variant="body1">{this.state.name}</Typography>
+                    }
                   </Grid>
                 </Grid>
               </Grid>

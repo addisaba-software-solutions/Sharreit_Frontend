@@ -14,7 +14,7 @@ export const sendGetRequest = async (url) => {
 export const sendGetRequestWithToken = async (url) => {
     const bearer = "Bearer " + sessionStorage.getItem(keys['TOKEN'])
     const requestOptions = {
-        method: "POST",
+        method: "GET",
         headers: {
             'Authorization': bearer
         }
@@ -27,6 +27,7 @@ export const sendGetRequestWithToken = async (url) => {
 }
 
 export const sendPostRequest = async (url, data) => {
+    console.log(data)
     const requestOptions = {
         method: "POST",
         headers: {
@@ -44,12 +45,11 @@ export const sendPostRequest = async (url, data) => {
 export const sendPostRequestWithToken = async (url, data) => {
     const bearer = "Bearer " + sessionStorage.getItem(keys['TOKEN'])
     const requestOptions = {
-        method: "POST",
+        method: "GET",
         headers: {
             'Authorization': bearer,
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+        }
     }
     return fetch(url, requestOptions).then(res => res.json())
 }

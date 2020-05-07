@@ -47,7 +47,7 @@ const steps = [
 
 export default function Registration({ history }) {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(2);
+  const [activeStep, setActiveStep] = React.useState(0);
   const [loading, setLoading] = React.useState(false)
 
   const [state, setState] = React.useState({
@@ -173,11 +173,22 @@ export default function Registration({ history }) {
         completed = false
         update["error"] = true
         setFinalForm({ ...finalForm, [element]: update });
-      } else if (final[element] !== "" && finalForm[element]["error"] && typeof final[element] === "string") {
+      } else if (final[element] !== "" && finalForm[element]["error"] && element !== "phoneNumber") {
         update["error"] = false
         setFinalForm({ ...finalForm, [element]: update });
       }
     }
+
+    if (final['phoneNumber'] === "+" || final['phoneNumber'] === "" || final['phoneNumber'] === "+1") {
+      update = finalForm['phoneNumber']
+      update["error"] = true
+      setFinalForm({ ...finalForm, ["phoneNumber"]: update });
+    } else {
+      update = finalForm['phoneNumber']
+      update["error"] = false
+      setFinalForm({ ...finalForm, ["phoneNumber"]: update });
+    }
+
     return completed
   }
 

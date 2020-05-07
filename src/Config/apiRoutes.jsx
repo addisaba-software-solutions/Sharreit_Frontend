@@ -5,5 +5,5 @@ export const routes = {
     signup: API_BASE_URL + "/signup",
     fetchAllItems: API_BASE_URL + "/items",
     addItem: API_BASE_URL + "/posts",
-    getUser: API_BASE_URL + "/getUser"
+    getUser: API_BASE_URL + "/getuser"
 }

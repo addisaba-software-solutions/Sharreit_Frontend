@@ -179,6 +179,12 @@ const classes = {
     height: 40,
     width: 80,
   },
+
+  user_name: {
+    color: "#000",
+    marginTop: 11
+  }
+
 };
 
 export default classes;

@@ -11,24 +11,14 @@ import {
 } from "@material-ui/core"
 import useStyles from "../styles"
 import MuiPhoneNumber from 'material-ui-phone-number'
-
+ 
 export default function FinalStep({ form, handleChange }) {
   const classes = useStyles();
   return (
     <Grid container component="main" className={classes.finalStepsContainer}>
       <form className={classes.finalStepsForm} noValidate>
         <FormControl className={classes.finalStepsBirthDay}>
-          {/* <TextField
-            id="date"
-            label="Phone Number"
-            name="phoneNumber"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            error={form.phoneNumber.error}
-            onChange={handleChange}
-          /> */}
-          <MuiPhoneNumber defaultCountry={"us"} onChange={handleChange} name="phoneNumber" />
+          <MuiPhoneNumber defaultCountry={"us"} onChange={value => handleChange({ target: { name: 'phoneNumber', value } })} />
           <FormHelperText error={form.phoneNumber.error}>
             {form.phoneNumber.error ? form.phoneNumber.errorText : ""}
           </FormHelperText>
