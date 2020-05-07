@@ -19,6 +19,7 @@ export default function FinalStep({ form, handleChange }) {
       <form className={classes.finalStepsForm} noValidate>
         <FormControl className={classes.finalStepsBirthDay}>
           <MuiPhoneNumber defaultCountry={"us"} onChange={value => handleChange({ target: { name: 'phoneNumber', value } })} />
+          <MuiPhoneNumber defaultCountry={"us"} onChange={value=> handleChange({ target: { name: "phoneNumber", value } })} name="phoneNumber" />
           <FormHelperText error={form.phoneNumber.error}>
             {form.phoneNumber.error ? form.phoneNumber.errorText : ""}
           </FormHelperText>

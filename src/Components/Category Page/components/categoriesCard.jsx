@@ -17,18 +17,8 @@ import storage from "../../../Assets/productSharing/storage.svg";
 import textbook from "../../../Assets/productSharing/textbook.svg";
 import tools from "../../../Assets/productSharing/tools.svg";
 import farming from "../../../Assets/productSharing/farming.svg";
-
-
-
-
-
-
-
-
-
-
-
-
+import Picture from '../../../Assets/boats.jpg'
+import { subCategories, categories, icons } from '../data'
 
 const styles = {
   root: {
@@ -50,191 +40,27 @@ const styles = {
   },
 };
 
-export default function categoriesCard() {
+export default function categoriesCard({ type }) {
   return (
     <Grid container xs={12} spacing={3} display>
-
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={BuildingSVG} style={styles.SVG} alt="" />
+      {
+        subCategories[categories[type]].map((item, index) => (
+          <Grid item xs={2}>
+          <Card style={styles.root} onClick={() => alert("Building Materials")}>
+            <Grid container xs={12}>
+              <Grid item xs={12} align="center" style={styles.padding}>
+                <img src={icons[categories[type]][index]} style={styles.SVG} alt="" />
+              </Grid>
+              <Grid item xs={12} align="center" style={styles.padding}>
+                <Typography style={styles.CardTitle}>
+                  {item}
+                </Typography>
+              </Grid>
             </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-                Building Materials
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={photography} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-                Photography
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={camping} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-                Camping Gears
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={farming} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-                Farming Equipments
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={instrument} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-              Music instruments
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={ladder} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-              Ladders
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={Lawn} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-              Lawn/Yard service
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={luggage} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-              Luggages
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={office} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-              Office Spaces
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={storage} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-              Storage Spaces
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={textbook} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-              College Books
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-      <Grid item xs={2}>
-        <Card style={styles.root} onClick={() => alert("Building Materials")}>
-          <Grid container xs={12}>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <img src={tools} style={styles.SVG} alt="" />
-            </Grid>
-            <Grid item xs={12} align="center" style={styles.padding}>
-              <Typography style={styles.CardTitle}>
-              Tools and Power tools
-              </Typography>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-
-
+          </Card>
+        </Grid>
+        ))
+      }
     </Grid>
   );
 }

@@ -7,7 +7,7 @@ import bulldozer from "../../Assets/bulldozer2.jpg";
 import classes from "./styles";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Boat from "../../Assets/boatss.png";
-import fetchUserInfo from './functions/fetchUserInfo'
+import fetchUserInfo from "./functions/fetchUserInfo";
 import {
   Button,
   Typography,
@@ -21,8 +21,8 @@ import Logo from "../../Assets/Group.svg";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AnimatedButtons from "./animated-buttons";
 import routes from "../../Config/routes";
-import keys from '../../Config/keys'
-import fetchAllItems from './functions/fetchItems'
+import keys from "../../Config/keys";
+import fetchAllItems from "./functions/fetchItems";
 
 class LandingPage extends React.Component {
   constructor() {
@@ -34,15 +34,22 @@ class LandingPage extends React.Component {
     this.props.history.push(routes.signIn);
   }
 
+  gotoCategory(type) {
+    this.props.history.push({
+      pathname: routes.category,
+      state: { type },
+    });
+  }
+
   async componentDidMount() {
-    const token = sessionStorage.getItem(keys['TOKEN'])
+    const token = sessionStorage.getItem(keys["TOKEN"]);
     if (typeof token === "string") {
       const { firstName, lastName } = await fetchUserInfo()
       sessionStorage.setItem(keys['FULL_NAME'], firstName + " " + lastName)
       this.setState({ name: firstName + " " + lastName })
     }
 
-    await fetchAllItems()
+    await fetchAllItems();
   }
 
   render() {
@@ -405,7 +412,7 @@ class LandingPage extends React.Component {
                 </Grid>
               </Grid>
               <Grid xs={12} container display="flex" justify="flex-end">
-                <Button>
+                <Button onClick={() => this.gotoCategory(0)}>
                   <Typography variant="caption">
                     See More SHARED PRODUCTS
                   </Typography>
@@ -529,7 +536,7 @@ class LandingPage extends React.Component {
                   </Grid>
                 </Grid>
                 <Grid xs={12} container display="flex" justify="flex-end">
-                  <Button>
+                  <Button onClick={() => this.gotoCategory(1)}>
                     <Typography variant="caption">
                       see more about Service Sharing
                     </Typography>

@@ -14,10 +14,9 @@ import Link from '@material-ui/core/Link';
 import HomeIcon from '@material-ui/icons/Home';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import GrainIcon from '@material-ui/icons/Grain';
+import { subCategories } from "./data"
 
-
-const CategoriesView = () => {
-
+const CategoriesView = ({ location }) => {
   return (
     <>
       <Box style={classes.root}>
@@ -30,7 +29,7 @@ const CategoriesView = () => {
         <Typography style={classes.Headertext2} glutterBottom>
           Sub-Categories Under Some Category
         </Typography>
-        {<Categories />}
+        {<Categories type={location.state.type} />}
       </Box>
     </>
   );
