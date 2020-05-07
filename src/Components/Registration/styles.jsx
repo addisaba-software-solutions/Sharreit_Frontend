@@ -17,6 +17,7 @@ export default makeStyles((theme) => ({
     animation: `fade-in ${easings.easeOutQuart} 5000ms forwards`,
   },
   stepper: {
+    width: 800,
     backgroundColor: "#F3FCF4",
   },
   active: {
@@ -85,4 +86,20 @@ export default makeStyles((theme) => ({
   singularField: {
     marginTop: 15,
   },
+
+  finalStepsContainer: {
+    display: "flex",
+    justifyContent: "center"
+  },
+
+  finalStepsForm: {
+    display: "flex",
+    flexDirection: "column"
+  },
+
+  finalStepsBirthDay: {
+    marginTop: 20,
+    marginBottom: 20
+  }
+
 }));

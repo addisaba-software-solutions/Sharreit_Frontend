@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
-import { Grid, Zoom, Typography, Fade } from "@material-ui/core";
+import { Grid, Zoom, Typography, Fade, Avatar } from "@material-ui/core";
 import clsx from "clsx";
 import useStyles from "./styles";
 import image from "./img/download.jpg";
+import { Visibility } from "@material-ui/icons";
+
 
 const Example = ({ start, amount }) => {
   const classes = useStyles();
@@ -47,7 +49,7 @@ const Example = ({ start, amount }) => {
     sideNotes[index] = false;
     setNote({ sideNotes });
   };
-  console.log(note.sideNotes);
+  
   return (
     <Grid className={classes.root} container>
       <Grid item xs={12} className={classes.root}>
@@ -58,8 +60,18 @@ const Example = ({ start, amount }) => {
               onMouseLeave={() => closeSideNote(index)}
               className={classes.container}
             >
-              <Zoom in={state.cars[index]} timeout={1000}>
-                <img src={image} className={classes.animated} alt="Car" />
+              <Zoom in={state.cars[index]} timeout={2000}>
+                
+                {/* <Avatar
+                src={image} className={classes.animated}
+                >
+
+                </Avatar> */}
+                <Avatar alt="Remy Sharp" src={image} className={classes.large} />
+                {/* <Visibility fontSize='large' style={{
+                  marginTop: 45
+                }}/> */}
+                {/* <img src={image} className={classes.animated} alt="Car" /> */}
               </Zoom>
               <Fade in={note.sideNotes[index]} timeout={900}>
                 <div className={classes.sideCaption}>

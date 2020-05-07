@@ -1,6 +1,11 @@
 import { makeStyles } from "@material-ui/core"
 
 export default makeStyles((theme) => ({
+    rooot: {
+        backgroundColor: '#F3FCF4',
+        height: '100vh'
+
+    },
     root: {
         marginTop: '5%',
         marginLeft: '20%',

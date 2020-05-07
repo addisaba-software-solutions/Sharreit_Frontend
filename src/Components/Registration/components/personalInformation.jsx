@@ -15,71 +15,45 @@ import {
 } from "@material-ui/core";
 import { LockOutlined } from "@material-ui/icons";
 import useStyles from "../styles";
-import { fields, options } from "../data";
+import { options } from "../data";
 
 import Logo from "../../../Assets/Group.svg";
 
-export default function SignupSide() {
+export default function PersonalInformation({ form, handleChange }) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    email: "",
-    password: "",
-    confirm_password: "",
-    street_address_1: "",
-    street_address_2: "",
-    city: "",
-    province: "",
-    country: "",
-    zip_code: "",
-  });
-
-  const [form, setForm] = React.useState({
-    email: fields.email,
-    password: fields.password,
-    confirm_password: fields.confirm_password,
-    street_address_1: fields.street_address_1,
-    street_address_2: fields.street_address_2,
-    city: fields.city,
-    province: fields.province,
-    country: fields.country,
-    zip_code: fields.zip_code,
-  });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setState({ ...state, [name]: value });
-  };
-
-  const checkForm = () => {
-    for (var element in state) {
-      if (typeof state[element] === "string") {
-        var update = form[element];
-        if (
-          state[element] === "" &&
-          form[element]["required"] &&
-          !form[element]["error"]
-        ) {
-          update["error"] = !form[element]["error"];
-          setForm({ ...form, [element]: update });
-        } else if (state[element] !== "" && form[element]["error"]) {
-          update["error"] = !form[element]["error"];
-          setForm({ ...form, [element]: update });
-        }
-      }
-    }
-  };
-
-  const handleClick = (event) => {
-    event.preventDefault();
-    const result = checkForm();
-    if (result) {
-      // API goes here
-    }
-  };
-
   return (
     <Grid container component="main">
       <form className={classes.form} noValidate>
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="firstName"
+          label="First Name"
+          name="firstName"
+          autoComplete="firstName"
+          onChange={handleChange}
+          error={form.firstName.error}
+        />
+        <FormHelperText error={form.firstName.error}>
+          {form.firstName.error ? form.firstName.errorText : ""}
+        </FormHelperText>
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="lastName"
+          label="Last Name"
+          name="lastName"
+          autoComplete="lastName"
+          onChange={handleChange}
+          error={form.lastName.error}
+        />
+        <FormHelperText error={form.lastName.error}>
+          {form.lastName.error ? form.lastName.errorText : ""}
+        </FormHelperText>
         <TextField
           variant="outlined"
           margin="normal"
@@ -232,7 +206,7 @@ export default function SignupSide() {
             </FormHelperText>
           </Grid>
         </Grid>
-        <Grid xs={12} align="center">
+        {/* <Grid xs={12} align="center">
           <Button
             type="submit"
             // fullWidth
@@ -244,7 +218,7 @@ export default function SignupSide() {
           >
             Register
           </Button>
-        </Grid>
+        </Grid> */}
       </form>
     </Grid>
   );

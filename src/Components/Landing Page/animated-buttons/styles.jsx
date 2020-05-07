@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
   container: {
     display: "flex",
     flexDirection: "row",
-    width: 635,
+    width: 1000,
   },
 
   animated: {
@@ -29,12 +29,12 @@ export default makeStyles((theme) => ({
   displayCaption: {
     transitions: theme.transitions.create(["width", "height"], {
       easing: theme.transitions.easing.easeInOut,
-      duration: '1000ms',
+      duration: "1000ms",
     }),
   },
 
   sideCaption: {
-    width: 1500,
+    width: 3000,
     height: 100,
     background: "#FFF8F6",
     marginLeft: 20,
@@ -42,5 +42,9 @@ export default makeStyles((theme) => ({
     borderRadius: 12,
     paddingLeft: 10,
     paddingTop: 15,
+  },
+  large: {
+    width: 80,
+    height: 80,
   },
 }));

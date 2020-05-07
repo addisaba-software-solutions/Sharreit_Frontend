@@ -7,6 +7,7 @@ import bulldozer from "../../Assets/bulldozer2.jpg";
 import classes from "./styles";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import Boat from "../../Assets/boatss.png";
+import fetchUserInfo from './functions/fetchUserInfo'
 import {
   Button,
   Typography,
@@ -19,7 +20,9 @@ import {
 import Logo from "../../Assets/Group.svg";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AnimatedButtons from "./animated-buttons";
-import routes from '../../Config/routes'
+import routes from "../../Config/routes";
+import keys from '../../Config/keys'
+import fetchAllItems from './functions/fetchItems'
 
 class LandingPage extends React.Component {
   constructor() {
@@ -30,6 +33,16 @@ class LandingPage extends React.Component {
   routeChange() {
     this.props.history.push(routes.signIn);
   }
+
+  async componentDidMount() {
+    const token = sessionStorage.getItem(keys['TOKEN'])
+    if (typeof token === "string") {
+      //await fetchUserInfo()
+    }
+
+    await fetchAllItems()
+  }
+
   render() {
     return (
       <>
@@ -274,20 +287,20 @@ class LandingPage extends React.Component {
         </Grid>
 
         <Grid container xs={12}>
-          <Grid item xs={1} align="left">
-            <AnimatedButtons start={true} amount={3} />
+          <Grid item xs={2} align="left">
+            <AnimatedButtons start={true} amount={4} />
           </Grid>
 
-          <Grid item xs={6} align="left">
+          <Grid item xs={10} align="left">
             <Box style={classes.cars}>
               <Grid item xs={12}>
                 <Typography align="left" style={classes.secondaryContainers}>
-                  VEHICLES
+                  Product Sharing
                 </Typography>
               </Grid>
               <Grid xs={12}>
                 <Typography align="left" style={classes.secondaryContainers1}>
-                  Different Vehicles for Different Purposes
+                  Make Money by Sharing your Products!
                 </Typography>
                 <Typography
                   align="left"
@@ -296,7 +309,7 @@ class LandingPage extends React.Component {
                     color: "#7D7D7D",
                   }}
                 >
-                  Bring your Minamn to life with an Rental website.
+                  Bring your Finances to life with a Sharing website.
                 </Typography>
               </Grid>
 
@@ -308,7 +321,30 @@ class LandingPage extends React.Component {
                       align="left"
                       style={classes.secondaryContainers}
                     >
-                      CONSTRUCTION
+                      COLLEGE TEXTBOOKS
+                    </Typography>
+                    <Typography
+                      align="left"
+                      style={{
+                        fontWeight: 10,
+                        color: "#7D7D7D",
+                        paddingTop: 10,
+                      }}
+                    >
+                      Share your textbooks so others could aksjdhaksjdhaskj
+                      dhaskjdhkjdhaksjdhkaj
+                    </Typography>
+                  </div>
+                  <div
+                    style={{
+                      paddingTop: 30,
+                    }}
+                  >
+                    <Typography
+                      align="left"
+                      style={classes.secondaryContainers}
+                    >
+                      CAMPING GEAR
                     </Typography>
                     <Typography
                       align="left"
@@ -331,30 +367,7 @@ class LandingPage extends React.Component {
                       align="left"
                       style={classes.secondaryContainers}
                     >
-                      Luxury
-                    </Typography>
-                    <Typography
-                      align="left"
-                      style={{
-                        fontWeight: 10,
-                        color: "#7D7D7D",
-                        paddingTop: 10,
-                      }}
-                    >
-                      Bring your Minamn to life with an Rental website. Bring
-                      your Minamn to life with an Rental website.
-                    </Typography>
-                  </div>
-                  <div
-                    style={{
-                      paddingTop: 30,
-                    }}
-                  >
-                    <Typography
-                      align="left"
-                      style={classes.secondaryContainers}
-                    >
-                      BASIC
+                      FARMING EQUIPMENTS
                     </Typography>
                     <Typography
                       align="left"
@@ -383,7 +396,9 @@ class LandingPage extends React.Component {
               </Grid>
               <Grid xs={12} container display="flex" justify="flex-end">
                 <Button>
-                  <Typography variant="caption">See More vehicles</Typography>
+                  <Typography variant="caption">
+                    See More SHARED PRODUCTS
+                  </Typography>
                   <ArrowRightAltIcon />
                 </Button>
               </Grid>
@@ -396,9 +411,6 @@ class LandingPage extends React.Component {
           <IconButton>
             <MoreHorizIcon style={classes.threeDots} />
           </IconButton>
-          <Typography variant="h4" style={classes.spacer}>
-            But Wait ... There's More!
-          </Typography>
         </Grid>
 
         <Box>
@@ -407,7 +419,7 @@ class LandingPage extends React.Component {
               <Box style={classes.carsother}>
                 <Grid item xs={12}>
                   <Typography align="left" style={classes.secondaryContainers}>
-                    RESIDENCES
+                    SERVICE SHARING :
                   </Typography>
                 </Grid>
                 <Grid xs={12}>
@@ -509,7 +521,7 @@ class LandingPage extends React.Component {
                 <Grid xs={12} container display="flex" justify="flex-end">
                   <Button>
                     <Typography variant="caption">
-                      See More Residences
+                      see more about Service Sharing
                     </Typography>
                     <ArrowRightAltIcon />
                   </Button>
@@ -521,7 +533,7 @@ class LandingPage extends React.Component {
               <Box style={classes.carsother}>
                 <Grid item xs={12}>
                   <Typography align="left" style={classes.secondaryContainers}>
-                    BOATS AND YACHTS
+                    DIGITAL SHARING :
                   </Typography>
                 </Grid>
                 <Grid xs={12}>
@@ -621,7 +633,9 @@ class LandingPage extends React.Component {
                 </Grid>
                 <Grid xs={12} container display="flex" justify="flex-end">
                   <Button>
-                    <Typography variant="caption">See More Boats</Typography>
+                    <Typography variant="caption">
+                      See More ABOUT digital sharing
+                    </Typography>
                     <ArrowRightAltIcon />
                   </Button>
                 </Grid>
