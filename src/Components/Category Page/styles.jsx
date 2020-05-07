@@ -1,10 +1,10 @@
 import { easings } from "react-animation";
 
-
 const classes = {
   root: {
     backgroundColor: "#F3FCF4",
     marginLeft: 20,
+    height: '100vh',
     marginRight: 20,
     padding: 15,
   },
