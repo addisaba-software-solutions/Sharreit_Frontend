@@ -629,8 +629,9 @@ class LandingPage extends React.Component {
                           paddingTop: 10,
                         }}
                       >
-                        Bring your Minamn to life with an Rental website. Bring
-                        your Minamn to life with an Rental website.
+                        Bring your Minamn to life with a Sharing Website
+                        website. Bring your Minamn to life with an Rental
+                        website.
                       </Typography>
                     </div>
                   </Grid>
@@ -647,7 +648,7 @@ class LandingPage extends React.Component {
                   </Grid>
                 </Grid>
                 <Grid xs={12} container display="flex" justify="flex-end">
-                  <Button>
+                  <Button onClick={() => this.gotoCategory(2)}>
                     <Typography variant="caption">
                       See More ABOUT digital sharing
                     </Typography>
