@@ -274,11 +274,11 @@ class LandingPage extends React.Component {
         </Grid>
 
         <Grid container xs={12}>
-          <Grid item xs={1} align="left">
-            <AnimatedButtons start={true} amount={3} />
+          <Grid item xs={2} align="left">
+            <AnimatedButtons start={true} amount={4} />
           </Grid>
 
-          <Grid item xs={6} align="left">
+          <Grid item xs={10} align="left">
             <Box style={classes.cars}>
               <Grid item xs={12}>
                 <Typography align="left" style={classes.secondaryContainers}>

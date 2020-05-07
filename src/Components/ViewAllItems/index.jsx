@@ -15,22 +15,20 @@ export default function ViewAllItems() {
       <main style={classes.root}>
         <Grid container xs={12}>
           <Grid item xs={3}>
-            <Typography style={classes.headers}>
-              Filter Your Search
-            </Typography>
+            <Typography style={classes.headers}>Filter Your Search</Typography>
             <Filter />
             <Divider />
           </Grid>
           <Grid item xs={9}>
-          <Typography style={classes.headers}>
+            <Typography style={classes.headers}>
               Category Descreption Goes Here
             </Typography>
-            <ItemsView  />
+            <ItemsView />
           </Grid>
         </Grid>
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

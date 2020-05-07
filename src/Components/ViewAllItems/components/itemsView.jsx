@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, Grid } from "@material-ui/core";
+import { Typography, Paper, Box, Grid, List } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -15,6 +15,9 @@ const classes = {
   root: {
     paddingLeft: 30,
     paddingRight: 30,
+    maxHeight: 860,
+    overflow: "auto",
+
     // backgroundColor: '#FFFFFF'
   },
   card: {
@@ -42,6 +45,7 @@ const classes = {
 export default function ItemsView() {
   return (
     <Box style={classes.root}>
+      <List>
       <Grid container xs={12} spacing={5}>
         <Grid item>
           <Card style={classes.card}>
@@ -209,7 +213,225 @@ export default function ItemsView() {
             </CardActionArea>
           </Card>
         </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card style={classes.card}>
+            <CardActionArea>
+              <CardMedia style={classes.media} image={image3} title="" />
+              <CardContent>
+                <Typography style={classes.cardTitle}>
+                  House For Rentas
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  60$/Day
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  <b>Share Count :</b> 87
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+
       </Grid>
+      </List>
     </Box>
   );
 }

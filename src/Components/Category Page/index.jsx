@@ -1,81 +1,79 @@
 import React from "react";
-import { Box, Paper } from "@material-ui/core";
-import Header from "./components/AppBar";
-import PremiumAd from "./components/PremiumAds/";
+import { Box, Paper, Grid, Typography } from "@material-ui/core";
+import Header from "../Headers&Footers/Header";
+// import PremiumAd from "./components/PremiumAds/";
 import Categories from "./components/categoriesCard";
 import CarImage from "../../Assets/SomeCar.jpg";
 import classes from "./styles";
 import routes from "../../Config/routes";
 import Something from "../../Assets/Rentalhouse.jpg";
+import PremiumAds from "./components/PremiumAds";
+
 
 const CategoriesView = () => {
-  const routeChange = () => {
-    this.props.history.push(routes.signIn);
-  };
 
-  const scrollRef = React.useRef(null);
 
-  const tempObject = {
-    caption: "An amazing sports car",
-    picture: CarImage,
-  };
+  // const scrollRef = React.useRef(null);
 
-  const [ads, setAds] = React.useState({
-    categories: Array(11).fill(tempObject),
-  });
+  // const tempObject = {
+  //   caption: "An amazing sports car",
+  //   picture: CarImage,
+  // };
 
-  const SCROLL_THRESHOLD = 50;
-  var SCROLLED_AMOUNT = 0;
-  const WAIT_TIME = 70;
-  const MAX_WIDTH = (ads.categories.length + ads.categories.length) * 420;
-  var direction = "right";
+  // const [ads, setAds] = React.useState({
+  //   categories: Array(11).fill(tempObject),
+  // });
 
-  const goLeft = () => {
-    direction = "left";
-    SCROLLED_AMOUNT -= SCROLL_THRESHOLD;
-    scrollRef.current.scrollLeft -= SCROLL_THRESHOLD;
-  };
+  // const SCROLL_THRESHOLD = 50;
+  // var SCROLLED_AMOUNT = 0;
+  // const WAIT_TIME = 70;
+  // const MAX_WIDTH = (ads.categories.length + ads.categories.length) * 420;
+  // var direction = "right";
 
-  const goRight = () => {
-    direction = "right";
-    SCROLLED_AMOUNT += SCROLL_THRESHOLD;
-    scrollRef.current.scrollLeft += SCROLL_THRESHOLD;
-  };
+  // const goLeft = () => {
+  //   direction = "left";
+  //   SCROLLED_AMOUNT -= SCROLL_THRESHOLD;
+  //   scrollRef.current.scrollLeft -= SCROLL_THRESHOLD;
+  // };
 
-  const infiniteScroller = () => {
-    if (SCROLLED_AMOUNT >= MAX_WIDTH) {
-      if (direction === "right") {
-        direction = "left";
-      }
-    } else if (SCROLLED_AMOUNT <= 0) {
-      if (direction === "left") {
-        direction = "right";
-      }
-    }
-    direction === "left" ? goLeft() : goRight();
-    setTimeout(() => infiniteScroller(), WAIT_TIME);
-  };
+  // const goRight = () => {
+  //   direction = "right";
+  //   SCROLLED_AMOUNT += SCROLL_THRESHOLD;
+  //   scrollRef.current.scrollLeft += SCROLL_THRESHOLD;
+  // };
 
-  React.useEffect(() => {
-    infiniteScroller();
-  });
+  // const infiniteScroller = () => {
+  //   if (SCROLLED_AMOUNT >= MAX_WIDTH) {
+  //     if (direction === "right") {
+  //       direction = "left";
+  //     }
+  //   } else if (SCROLLED_AMOUNT <= 0) {
+  //     if (direction === "left") {
+  //       direction = "right";
+  //     }
+  //   }
+  //   direction === "left" ? goLeft() : goRight();
+  //   setTimeout(() => infiniteScroller(), WAIT_TIME);
+  // };
+
+  // React.useEffect(() => {
+  //   infiniteScroller();
+  // });
 
   return (
     <>
       <Box style={classes.root}>
         <Header />
-        {/* End of AppBar Portion ? */}
         <Box style={{ height: 80 }} />
-        <div style={classes.scrollWrapper} ref={scrollRef}>
-          {ads.categories.map((item, index) => (
-            <div style={classes.card}>
-              <PremiumAd
-                caption={item.caption + " " + index}
-                picture={item.picture}
-              />
-            </div>
-          ))}
-        </div>
+        <Grid xs={12} align="center">
+          <Typography glutterBottom style={classes.Headertext1}>
+            Category Info Goes Here
+          </Typography>
+        </Grid>
+        <PremiumAds />
+        <Typography style={classes.Headertext2} glutterBottom>
+          Sub-Categories Under Some Category
+        </Typography>
         {<Categories />}
         {<Categories />}
         {<Categories />}
