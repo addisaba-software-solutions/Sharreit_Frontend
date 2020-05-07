@@ -34,6 +34,13 @@ class LandingPage extends React.Component {
     this.props.history.push(routes.signIn);
   }
 
+  gotoCategory(type) {
+    this.props.history.push({
+      pathname: routes.category,
+      state: { type }
+    })
+  }
+
   async componentDidMount() {
     const token = sessionStorage.getItem(keys['TOKEN'])
     if (typeof token === "string") {
@@ -395,7 +402,7 @@ class LandingPage extends React.Component {
                 </Grid>
               </Grid>
               <Grid xs={12} container display="flex" justify="flex-end">
-                <Button>
+                <Button onClick={() => this.gotoCategory(0)}>
                   <Typography variant="caption">
                     See More SHARED PRODUCTS
                   </Typography>
@@ -519,7 +526,7 @@ class LandingPage extends React.Component {
                   </Grid>
                 </Grid>
                 <Grid xs={12} container display="flex" justify="flex-end">
-                  <Button>
+                  <Button onClick={() => this.gotoCategory(1)}>
                     <Typography variant="caption">
                       see more about Service Sharing
                     </Typography>
