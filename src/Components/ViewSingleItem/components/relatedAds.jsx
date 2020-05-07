@@ -29,7 +29,7 @@ const classes = {
     paddingLeft: 10,
   },
   relatedAdsContainer: {
-    maxHeight: 600,
+    maxHeight: 430,
     overflow: "auto",
     backgroundColor: "#F3FCF4",
     boxShadow: 0,

@@ -1,7 +1,18 @@
 import React from "react";
-import { Paper, Avatar, Box ,Grid, Typography } from "@material-ui/core";
+import {
+  Paper,
+  Avatar,
+  Box,
+  Grid,
+  Divider,
+  Typography,
+} from "@material-ui/core";
 import ProfilePicture from "../../../Assets/ww.jpg";
 import StarIcon from "@material-ui/icons/Star";
+import Facebook from "../../../Assets/FaceBookSVG.svg";
+import WhatsApp from "../../../Assets/WhatsAppSVG.svg";
+import Telegram from "../../../Assets/TelegramSVG.svg";
+
 const classes = {
   root: {
     minHeight: 50,
@@ -24,6 +35,10 @@ const classes = {
   textColor: {
     color: "#7D7D7D",
     padding: 10,
+  },
+  small: {
+    width: 30,
+    height: 30,
   },
 };
 
@@ -63,7 +78,43 @@ export default function Profile() {
               Member Since : 12/02/2019 (Family)
             </Typography>
           </Grid>
+
         </Grid>
+        <Grid xs={12} align="left">
+            <Typography glutterBottom>Contact Information</Typography>
+            <Divider />
+            <Grid style={{ marginTop: 10 }} container xs={12}>
+              <Grid item xs={2}>
+                <Avatar style={classes.small} src={Facebook} />
+              </Grid>
+              <Grid item xs={10} style={{ marginTop: 4 }}>
+                <Typography variant="body2">
+                  hdjahsdgjashdgajshdgjhg
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid style={{ marginTop: 10 }} container xs={12}>
+              <Grid item xs={2}>
+                <Avatar variant="square" style={classes.small} src={Telegram} />
+              </Grid>
+              <Grid item xs={10} style={{ marginTop: 4 }}>
+                <Typography variant="body2">
+                  hdjahsdgjashdgajshdgjhg
+                </Typography>
+              </Grid>
+            </Grid>
+
+            <Grid style={{ marginTop: 10 }} container xs={12}>
+              <Grid item xs={2}>
+                <Avatar variant="square" style={classes.small} src={WhatsApp} />
+              </Grid>
+              <Grid item xs={10} style={{ marginTop: 4 }}>
+                <Typography variant="body2">
+                  hdjahsdgjashdgajshdgjhg
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
       </Grid>
     </Paper>
   );

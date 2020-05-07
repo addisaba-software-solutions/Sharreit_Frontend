@@ -1,19 +1,22 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Card, Button, Paper, Grid, Typography, Box } from "@material-ui/core";
+import { Card, Button, Grid, Typography, Box } from "@material-ui/core";
 import Something from "../../../../Assets/bulldozer.jpg";
 import House from "../../../../Assets/Rental_house.jpg";
 import StarIcon from "@material-ui/icons/Star";
+import { easings } from "react-animation";
 
 const classes = {
   image: {
-    // width: 200,
     height: 600,
+    borderRadius: 30,
+  },
+  imageContainer: {
+    backgroundColor: "#F3FCF4",
   },
   sliderTextContainer: {
     margin: 100,
-    //   backgroundColor: '#7d7d7d',
     height: "auto",
   },
   sliderContainer: {
@@ -38,6 +41,7 @@ const classes = {
   },
   sliderBody2Container: {
     marginLeft: 20,
+    animation: `pop-in ${easings.easeOutExpo} 2000ms forwards`,
   },
   sliderButton: {
     backgroundColor: "#008060",
@@ -49,7 +53,7 @@ const classes = {
 export default () => (
   <Carousel autoPlay infiniteLoop>
     <Card>
-      <Grid container xs={12}>
+      <Grid style={classes.imageContainer} container xs={12}>
         <Grid item xs={6}>
           <img style={classes.image} alt="" src={Something} />
         </Grid>
@@ -101,7 +105,7 @@ export default () => (
 
     <Card>
       <Grid container xs={12}>
-        <Grid item xs={6}>
+        <Grid style={classes.imageContainer} item xs={6}>
           <img style={classes.image} alt="" src={House} />
         </Grid>
 
@@ -152,7 +156,7 @@ export default () => (
 
     <Card>
       <Grid container xs={12}>
-        <Grid item xs={6}>
+        <Grid style={classes.imageContainer} item xs={6}>
           <img style={classes.image} alt="" src={Something} />
         </Grid>
 
@@ -203,7 +207,7 @@ export default () => (
 
     <Card>
       <Grid container xs={12}>
-        <Grid item xs={6}>
+        <Grid style={classes.imageContainer} item xs={6}>
           <img style={classes.image} alt="" src={House} />
         </Grid>
 
@@ -254,7 +258,7 @@ export default () => (
 
     <Card>
       <Grid container xs={12}>
-        <Grid item xs={6}>
+        <Grid style={classes.imageContainer} item xs={6}>
           <img style={classes.image} alt="" src={Something} />
         </Grid>
 
@@ -305,7 +309,7 @@ export default () => (
 
     <Card>
       <Grid container xs={12}>
-        <Grid item xs={6}>
+        <Grid style={classes.imageContainer} item xs={6}>
           <img style={classes.image} alt="" src={House} />
         </Grid>
 
