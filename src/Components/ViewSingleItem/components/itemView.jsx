@@ -48,6 +48,7 @@ const classes = {
   },
   bodybody: {
     color: "#7D7D7D",
+    padding: 10
   },
   bodyTitle2: {
     padding: 10,
@@ -60,7 +61,9 @@ const classes = {
     paddingRight: 20,
     color: "#FFFFFF",
     marginBottom: 10,
-    marginLeft: 30,
+    marginLeft: 100,
+    marginTop: 50,
+
   },
   spacing: {
     margin: 10,
@@ -122,9 +125,9 @@ export default () => {
             {[...new Array(10)]
               .map(
                 () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
+                        Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                        Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
               )
               .join("\n")}
           </DialogContentText>
@@ -227,7 +230,7 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
                       }
                     >
                       <Typography style={classes.bodyTitle2}>
-                        <b>Availability Check</b>
+                        <b>Availability</b>
                       </Typography>
                     </Badge>
                   </Grid>
