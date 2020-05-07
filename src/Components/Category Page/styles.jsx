@@ -1,3 +1,6 @@
+import { easings } from "react-animation";
+
+
 const classes = {
   root: {
     backgroundColor: "#F3FCF4",
@@ -33,6 +36,17 @@ const classes = {
   card: {
     display: "inline-block",
     margin: 10,
+  },
+  link: {
+    display: "flex",
+    color: "#004C3F",
+    paddingBottom: 30,
+    height: 40,
+  },
+  icon: {
+    marginRight: 10,
+    width: 40,
+    height: 40,
   },
 };
 

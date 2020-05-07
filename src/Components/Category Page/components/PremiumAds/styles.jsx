@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core'
 import Colors from '../../../../Config/config'
 
+
 export default makeStyles(theme => ({
     root: {
         display: "flex",
@@ -17,8 +18,6 @@ export default makeStyles(theme => ({
         width: 'auto',
         height: 'auto'
     },
-
-
     cardText: {
         fontWeight: 500
     }
