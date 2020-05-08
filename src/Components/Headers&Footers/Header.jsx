@@ -11,7 +11,6 @@ import {
 import { Add } from "@material-ui/icons";
 import Logo from "../../Assets/Group.svg";
 import keys from "../../Config/keys";
-import routes from "../../Config/routes";
 
 export default ({ history }) => {
   const fullName = sessionStorage.getItem(keys["FULL_NAME"]);
@@ -95,24 +94,19 @@ export default ({ history }) => {
               </Button>
             </Grid>
             <Grid item>
-              <IconButton
-                onClick={() => history.push(routes.addItem)}
-                align="right"
-                variant="contained"
-                style={classes.button}
-              >
-                <Add />
-              </IconButton>
+              {fullName === "" ? (
+                ""
+              ) : (
+                <IconButton
+                  align="right"
+                  variant="contained"
+                  style={classes.button}
+                >
+                  <Add />
+                </IconButton>
+              )}
             </Grid>
             <Grid item>
-              {
-                fullName === "" ? "" : (
-                  <IconButton align="right" variant="contained" style={classes.button}>
-                    <Add />
-                  </IconButton>
-                )
-              }
-
               {fullName === "" ? (
                 <Button
                   align="right"
@@ -122,7 +116,7 @@ export default ({ history }) => {
                   Categories
                 </Button>
               ) : (
-                <Typography variant="body1" style={classes.user_name}>
+                <Typography variant="body1" style={classes.Headertext1}>
                   {fullName}
                 </Typography>
               )}

@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Headers&Footers/Header";
 import Footer from "../Headers&Footers/Footer";
 import classes from "./styles";
-import { Divider, Grid, Box, Typography } from "@material-ui/core";
+import { Divider, Grid, Typography } from "@material-ui/core";
 import Filter from "./components/filter";
 import ItemsView from "./components/itemsView";
 
