@@ -3,15 +3,10 @@ import {
   Avatar,
   Button,
   CssBaseline,
-  TextField,
   Paper,
   Box,
   Grid,
   Typography,
-  Select,
-  InputLabel,
-  FormControl,
-  FormHelperText,
   Step,
   StepLabel,
   Stepper,
@@ -20,7 +15,6 @@ import { LockOutlined } from "@material-ui/icons";
 import useStyles from "./styles";
 import { fields, socialMedia, personalDetails } from "./data";
 import Logo from "../../Assets/Group.svg";
-import clsx from "clsx";
 import PersonalInformation from "./components/personalInformation";
 import SocialMediaInformation from "./components/socialMedia";
 import FinalInformation from "./components/finalStep";
@@ -48,7 +42,7 @@ const steps = [
 export default function Registration({ history }) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-  const [loading, setLoading] = React.useState(false)
+  const [loading, setLoading] = React.useState(false);
 
   const [state, setState] = React.useState({
     firstName: "",
@@ -174,24 +168,32 @@ export default function Registration({ history }) {
         completed = false;
         update["error"] = true;
         setFinalForm({ ...finalForm, [element]: update });
-      } else if (final[element] !== "" && finalForm[element]["error"] && element !== "phoneNumber") {
-        update["error"] = false
+      } else if (
+        final[element] !== "" &&
+        finalForm[element]["error"] &&
+        element !== "phoneNumber"
+      ) {
+        update["error"] = false;
         setFinalForm({ ...finalForm, [element]: update });
       }
     }
 
-    if (final['phoneNumber'] === "+" || final['phoneNumber'] === "" || final['phoneNumber'] === "+1") {
-      update = finalForm['phoneNumber']
-      update["error"] = true
+    if (
+      final["phoneNumber"] === "+" ||
+      final["phoneNumber"] === "" ||
+      final["phoneNumber"] === "+1"
+    ) {
+      update = finalForm["phoneNumber"];
+      update["error"] = true;
       setFinalForm({ ...finalForm, ["phoneNumber"]: update });
     } else {
-      update = finalForm['phoneNumber']
-      update["error"] = false
+      update = finalForm["phoneNumber"];
+      update["error"] = false;
       setFinalForm({ ...finalForm, ["phoneNumber"]: update });
     }
 
-    return completed
-  }
+    return completed;
+  };
 
   function getStepContent(step) {
     switch (step) {

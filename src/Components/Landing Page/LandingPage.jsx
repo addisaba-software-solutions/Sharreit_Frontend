@@ -22,7 +22,7 @@ import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import AnimatedButtons from "./animated-buttons";
 import routes from "../../Config/routes";
 import keys from "../../Config/keys";
-import fetchAllItems from "./functions/fetchItems";
+// import fetchAllItems from "./functions/fetchItems";
 
 class LandingPage extends React.Component {
   constructor() {
