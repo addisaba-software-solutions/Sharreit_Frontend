@@ -1,4 +1,4 @@
-exports.fields = {
+export const fields = {
     title: {
         error: false,
         required: true,
@@ -55,27 +55,40 @@ exports.fields = {
     }
 }
 
-exports.options = {
+export const options = {
     conditions: ["New", "Barely Used", "Used"],
     location: ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 }
 
-exports.categories = [
-    "Products", "Services", "Digital"
+export const categories = [
+    "Product Sharing",
+    "Services Sharing",
+    "Digital Sharing",
 ]
-
-exports.subCategories = {
-    [this.categories[0]]: [
-        "Textbooks", "Power Tools", "Music Instruments", "Photography / Videography Instruments",
-        "Luggage", "Camping Gear", "Pool Supplies", "Construction Equipments", "Farming Equipments",
-        "Ladder", "Office Space", "Storage Space"
+  
+export const subCategories = {
+    [categories[0]]: [
+        "Textbooks",
+        "Power Tools",
+        "Music Instruments",
+        "Luggage",
+        "Camping Gear", 
+        "Construction Equipments",
+        "Farming Equipments",
+        "Ladder",
+        "Office Space",
+        "Storage Space",
+        "Photography / Videography",
     ],
 
-    [this.categories[1]]: [
-        "Nanny", "Tutors", "Music Tutors", "Personal Trainer", "Personal Drivers", "Cleaners"
+    [categories[1]]: [
+        "Nanny",
+        "Tutors",
+        "Music Tutors",
+        "Personal Trainer",
+        "Personal Drivers",
+        "Cleaners",
     ],
 
-    [this.categories[2]]: [
-        "Season Tickets", "Subscription Services"
-    ]
-}
+    [categories[2]]: ["Season Tickets", "Subscription Services"],
+};

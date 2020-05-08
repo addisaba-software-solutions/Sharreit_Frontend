@@ -26,7 +26,6 @@ export default ({ id }) => {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
   const [loaded, setLoaded] = React.useState(false)
-  const [otherImages, setOtherImages] = React.useState([])
   const [postContent, setPost] = React.useState({})
 
   const handleClickOpen = (scrollType) => () => {
@@ -41,7 +40,6 @@ export default ({ id }) => {
   const descriptionElementRef = React.useRef(null);
   React.useEffect(async () => {
     const { status, data } = await fetchItem(id)
-    console.log(id)
     if (status === statusCodes.SUCCESS) {
       const { post } = data
       var fetchedPost = {

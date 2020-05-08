@@ -64,7 +64,8 @@ export default function SignIn({ history }) {
       setLoading(true)
       const { data } = await signIn(state.email, state.password)
       if (data.token !== "") {
-        sessionStorage.setItem(keys['TOKEN'], data.token)
+        localStorage.clear()
+        localStorage.setItem(keys['TOKEN'], data.token)
         history.push(routes.root)
       }
     }

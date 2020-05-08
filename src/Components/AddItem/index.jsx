@@ -104,9 +104,12 @@ const AddItem = ({ history }) => {
   const handleClick = async () => {
     const result = checkForm();
     if (result) {
-      const { status } = await addItem(state, productImages)
+      const { status, data } = await addItem(state, productImages)
       if (status === statusCodes.SUCCESS_CREATED) {
-        history.push(routes.singleItem)
+        history.push({
+          pathname: routes.singleItem,
+          state: { id: data.postId }
+        })
       }
     }
   };
