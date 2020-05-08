@@ -146,7 +146,8 @@ const classes = {
   carsother: {
     // animation: animations.slideIn,
     animation: `pop-in ${easings.easeOutExpo} 2000ms forwards`,
-    height: "auto",
+    height: 700,
+
     width: 550,
     marginBottom: 100,
     borderRadius: 5,
@@ -182,9 +183,8 @@ const classes = {
 
   user_name: {
     color: "#000",
-    marginTop: 11
-  }
-
+    marginTop: 11,
+  },
 };
 
 export default classes;
