@@ -7,7 +7,7 @@ import CategoryPage from "./Components/Category Page/";
 import LandingPage from "./Components/Landing Page/LandingPage";
 import SingleItem from "./Components/ViewSingleItem/";
 import AllItems from "./Components/ViewAllItems";
-import routes from "./Config/routes";
+import routes from './Config/routes';
 
 const App = () => {
   return (
