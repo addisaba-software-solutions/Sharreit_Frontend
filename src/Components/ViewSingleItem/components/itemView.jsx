@@ -41,6 +41,7 @@ export default ({ id }) => {
   const descriptionElementRef = React.useRef(null);
   React.useEffect(async () => {
     const { status, data } = await fetchItem(id)
+    console.log(id)
     if (status === statusCodes.SUCCESS) {
       const { post } = data
       var fetchedPost = {

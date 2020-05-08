@@ -9,7 +9,7 @@ import ItemView from "./components/itemView";
 import fetchItem from './functions/fetchItem'
 import preLoaderImage from '../../Assets/circle_loading_1.gif'
 
-export default function SingleItem({ id }) {
+export default function SingleItem({ location }) {
   return (
     <div style={classes.root}>
       <Grid xs={12} style={classes.appbarShift}>
@@ -17,7 +17,7 @@ export default function SingleItem({ id }) {
       </Grid>
       <Grid container xs={12} spacing={3}>
         <Grid item xs={9} style={classes.singleItemView}>
-          <ItemView id={id} />
+          <ItemView id={location.state.id} />
         </Grid>
         <Grid item xs={3} style={classes.divider} align="center">
           <Grid item>

@@ -7,6 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import fetchAllItems from '../functions/fetchAllItems'
 import { statusCodes } from '../../../Config/config'
 import preLoader from '../../../Assets/circle_loading_1.gif'
+import routes from '../../../Config/routes'
 
 const classes = {
   root: {
