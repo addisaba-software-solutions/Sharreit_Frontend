@@ -1,8 +1,9 @@
 import React from "react";
 import { Typography, Box, Grid, List, Card, Paper } from "@material-ui/core";
 import Something from "../../../Assets/Rentalhouse.jpg";
-import fetchItems from '../../ViewAllItems/functions/fetchAllItems'
+import fetchItems from '../../ViewAllItems/functions/fetchItemsBySubCategory'
 import { statusCodes } from '../../../Config/config'
+import routes from '../../../Config/routes'
 
 const classes = {
   title: {
@@ -37,14 +38,12 @@ const classes = {
     boxShadow: 0,
   },
 };
-export default ({ id, history }) => {
+export default ({ id, category, subCategory, changeID }) => {
   const [loaded, setLoaded] = React.useState(false)
   const [content, setContent] = React.useState([])
 
-  
-
   React.useEffect(async () => {
-    const { status, data } = await fetchItems()
+    const { status, data } = await fetchItems(category, subCategory)
     if (status === statusCodes.SUCCESS) {
       const { posts } = data
       setContent(posts)
@@ -54,7 +53,7 @@ export default ({ id, history }) => {
 
   return (
     <>
-      <Grid xs={12}>
+      <Grid xs={12} style={{ display: loaded && content.length > 0? "flex" : "none" }}>
         <Typography align="left" style={classes.title}>
           Related Ads
         </Typography>
@@ -63,7 +62,8 @@ export default ({ id, history }) => {
         <List>
           {
             loaded? content.map((item, index) => (
-              <Grid container xs={12} style={classes.relatedAds} onClick={() => alert(item.id)}>
+              item.id !== id? (
+                <Grid container xs={12} style={classes.relatedAds} onClick={() => changeID(item.id)}>
                 <Grid xs={6} align="left">
                   <img src={item.post.postImage[0]} style={classes.relatedAdsPicture} alt="" />
                 </Grid>
@@ -79,6 +79,7 @@ export default ({ id, history }) => {
                   </Typography>
                 </Grid>
               </Grid>
+              ) : ""
             )) : <div></div>
           }
         </List>

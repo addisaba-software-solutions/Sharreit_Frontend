@@ -58,7 +58,7 @@ export default class ItemsView extends React.Component {
   gotoSingleItem(id) {
     this.props.history.push({
       pathname: routes.singleItem,
-      state: { id },
+      state: { id, category: this.props.category, subCategory: this.props.subCategory },
     })
   }
 
@@ -128,11 +128,11 @@ export default class ItemsView extends React.Component {
       <Box style={classes.root}>
         <List>
           {
-            this.state.content.length === 0? ( <Typography variant="h4">No items in this category</Typography> ) : (
+            this.state.content.length && !this.state.loading === 0? ( <Typography variant="h4">No items in this category</Typography> ) : (
             <Grid container xs={12} spacing={5}>
               {this.state.loading? this.state.waitingContent : this.state.content}
             </Grid>
-          )
+            )
           }
         </List>
       </Box>

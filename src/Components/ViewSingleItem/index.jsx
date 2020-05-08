@@ -6,10 +6,15 @@ import { Grid, Divider, Typography, Box } from "@material-ui/core";
 import Profile from "./components/profile";
 import RelatedAds from "./components/relatedAds";
 import ItemView from "./components/itemView";
-import fetchItem from './functions/fetchItem'
-import preLoaderImage from '../../Assets/circle_loading_1.gif'
 
-export default function SingleItem({ location }) {
+export default ({ location }) => {
+  const [postID, setID] = React.useState(location.state.id)
+
+  const changeID = (id) => {
+    console.log(postID)
+    setID(id)
+  }
+
   return (
     <div style={classes.root}>
       <Grid xs={12} style={classes.appbarShift}>
@@ -17,7 +22,7 @@ export default function SingleItem({ location }) {
       </Grid>
       <Grid container xs={12} spacing={3}>
         <Grid item xs={9} style={classes.singleItemView}>
-          <ItemView id={location.state.id} />
+          <ItemView id={postID} />
         </Grid>
         <Grid item xs={3} style={classes.divider} align="center">
           <Grid item>
@@ -35,7 +40,7 @@ export default function SingleItem({ location }) {
             }}
           />
           <Grid item>
-            <RelatedAds />
+            <RelatedAds changeID={changeID} id={postID} category={location.state.category} subCategory={location.state.subCategory} />
           </Grid>
         </Grid>
       </Grid>

@@ -22,7 +22,8 @@ import classes from './itemViewStyles'
 import fetchItem from '../functions/fetchItem'
 import { statusCodes } from '../../../Config/config'
 
-export default ({ id }) => {
+export default ({ id, category, subCatagory, changeID }) => {
+  const [postID, setPostID] = React.useState(id)
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
   const [loaded, setLoaded] = React.useState(false)
@@ -38,33 +39,37 @@ export default ({ id }) => {
   };
 
   const descriptionElementRef = React.useRef(null);
-  React.useEffect(async () => {
-    const { status, data } = await fetchItem(id)
-    if (status === statusCodes.SUCCESS) {
-      const { post } = data
-      var fetchedPost = {
-        category: post.category,
-        condition: post.condition,
-        description: post.description,
-        email: post.email,
-        images: post.postImage,
-        price: post.price,
-        sold: post.sold,
-        subCatagory: post.subCatagory,
-        termAndCondition: post.termAndCondition,
-        title: post.title
+  React.useEffect(() => {
+    setLoaded(false)
+    const update = async () => {
+      const { status, data } = await fetchItem(id)
+      if (status === statusCodes.SUCCESS) {
+        const { post } = data
+        var fetchedPost = {
+          category: post.category,
+          condition: post.condition,
+          description: post.description,
+          email: post.email,
+          images: post.postImage,
+          price: post.price,
+          sold: post.sold,
+          subCatagory: post.subCatagory,
+          termAndCondition: post.termAndCondition,
+          title: post.title
+        }
+        
+        setPost(fetchedPost)
+        setLoaded(true)
       }
-      
-      setPost(fetchedPost)
-      setLoaded(true)
-    }
-    if (open) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
+      if (open) {
+        const { current: descriptionElement } = descriptionElementRef;
+        if (descriptionElement !== null) {
+          descriptionElement.focus();
+        }
       }
     }
-  }, [open]);
+    update()
+  }, [id])
 
   return (
     <>
