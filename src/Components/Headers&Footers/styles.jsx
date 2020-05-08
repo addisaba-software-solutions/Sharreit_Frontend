@@ -60,8 +60,8 @@ const classes = {
     fontWeight: 600,
   },
   user_name: {
-    color: "#000",
-    marginTop: 9
+    color: "#42474C",
+    marginTop: 9,
   },
 };
 

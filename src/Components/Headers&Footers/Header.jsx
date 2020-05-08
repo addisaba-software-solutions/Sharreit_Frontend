@@ -11,6 +11,7 @@ import {
 import { Add } from "@material-ui/icons";
 import Logo from "../../Assets/Group.svg";
 import keys from "../../Config/keys";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 export default ({ history }) => {
   const fullName = sessionStorage.getItem(keys["FULL_NAME"]);
@@ -116,9 +117,18 @@ export default ({ history }) => {
                   Categories
                 </Button>
               ) : (
-                <Typography variant="body1" style={classes.Headertext1}>
-                  {fullName}
-                </Typography>
+                <Grid container>
+                  <Grid item>
+                    <Typography variant="body1" style={classes.user_name}>
+                      {fullName}
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <IconButton>
+                      <ExitToAppIcon color='secondary' />
+                    </IconButton>
+                  </Grid>
+                </Grid>
               )}
             </Grid>
           </Grid>
