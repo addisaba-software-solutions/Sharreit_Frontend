@@ -37,7 +37,7 @@ class LandingPage extends React.Component {
   gotoCategory(type) {
     this.props.history.push({
       pathname: routes.category,
-      state: { type }, 
+      state: { type },
     });
   }
 
@@ -180,7 +180,7 @@ class LandingPage extends React.Component {
             {/* Starting Of Body One's Right Side */}
             <Grid item xs={6}>
               <Typography style={classes.body_One} align="left">
-                Share ---
+                Share
               </Typography>
               <Typography style={classes.body_OneEverything} align="left">
                 everything
@@ -474,7 +474,8 @@ class LandingPage extends React.Component {
                           paddingTop: 10,
                         }}
                       >
-                        exhausted? do you need someone to take care of your kids?? Hire a Nanny
+                        exhausted? do you need someone to take care of your
+                        kids?? Hire a Nanny
                       </Typography>
                     </div>
                     <div
@@ -496,8 +497,9 @@ class LandingPage extends React.Component {
                           paddingTop: 10,
                         }}
                       >
-                        Want a skill you never had?? or maybe thinking of improving your musical skills?? 
-                        we know people that are willing to teach you!
+                        Want a skill you never had?? or maybe thinking of
+                        improving your musical skills?? we know people that are
+                        willing to teach you!
                       </Typography>
                     </div>
                     <div
@@ -519,7 +521,8 @@ class LandingPage extends React.Component {
                           paddingTop: 10,
                         }}
                       >
-                        Have Kids that are home schooled? Do you need A tutor? from languages to Academic Studies?
+                        Have Kids that are home schooled? Do you need A tutor?
+                        from languages to Academic Studies?
                       </Typography>
                     </div>
                   </Grid>
@@ -550,7 +553,7 @@ class LandingPage extends React.Component {
               <Box style={classes.carsother}>
                 <Grid item xs={12}>
                   <Typography align="left" style={classes.secondaryContainers}>
-                    DIGITAL SHARING 
+                    DIGITAL SHARING
                   </Typography>
                 </Grid>
                 <Grid xs={12}>
