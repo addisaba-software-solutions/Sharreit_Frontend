@@ -56,6 +56,14 @@ export default class ItemsView extends React.Component {
 
     this.preLoaders = this.preLoaders.bind(this)
     this.mappedItems = this.mapItems.bind(this)
+    this.gotoSingleItem = this.gotoSingleItem.bind(this)
+  }
+
+  gotoSingleItem(id) {
+    this.props.history.push({
+      pathname: routes.singleItem,
+      state: { id },
+    })
   }
 
   async componentDidMount() {
@@ -89,11 +97,13 @@ export default class ItemsView extends React.Component {
   mapItems = (items) => {
     var mappedItems = []
     items.forEach((value, index) => {
-      var { post } = value
+      var { post, id } = value
       if (post.postImage.length > 0) {
         mappedItems.push(
           <Grid item>
-            <Card style={classes.card}>
+            <Card style={classes.card}
+              onClick={() => this.gotoSingleItem(id)}
+            >
               <CardActionArea>
                 <CardMedia style={classes.media} image={post.postImage[0]} title="" />
                 <CardContent>

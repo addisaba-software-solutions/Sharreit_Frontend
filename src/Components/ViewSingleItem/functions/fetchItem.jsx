@@ -1,6 +1,9 @@
 import { routes } from '../../../Config/apiRoutes'
-import { sendPostRequestWithToken } from '../../../Config/Networking'
+import { sendGetRequestWithParam } from '../../../Config/Networking'
 
 const fetchItem = async () => {
-    const response = await sendPostRequestWithToken(routes.fetchSingleItem)
+    const token = "A0D3QUQgA1gUASH2sUmm"
+    return await sendGetRequestWithParam(routes.fetchSingleItem, { key: "id", value: token })
 }
+
+export default fetchItem

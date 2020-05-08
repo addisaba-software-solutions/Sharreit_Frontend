@@ -17,10 +17,25 @@ export const sendGetRequestWithToken = async (url) => {
     const requestOptions = {
         method: "GET",
         headers: {
-            'Authorization': "Bearer " + sessionStorage.getItem(keys['TOKEN'])
+            'Authorization': "Bearer " + bearer
         }
     }
     const response = await fetch(url, requestOptions)
+    const fetchedData = await response.json()
+    return {
+        status: response.status, data: fetchedData
+    }
+}
+
+export const sendGetRequestWithParam = async (url, param) => {
+    const bearer = "Bearer " + sessionStorage.getItem(keys['TOKEN'])
+    const requestOptions = {
+        method: "GET",
+        headers: {
+            'Authorization': "Bearer " + bearer
+        }
+    }
+    const response = await fetch(url + `?${param.key}=${param.value}`, requestOptions)
     const fetchedData = await response.json()
     return {
         status: response.status, data: fetchedData
