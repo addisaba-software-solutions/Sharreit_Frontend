@@ -28,7 +28,7 @@ export const subCategories = {
     "Power Tools",
     "Music Instruments",
     "Luggage",
-    "Camping Gear",
+    "Camping Gear", 
     "Construction Equipments",
     "Farming Equipments",
     "Ladder",
