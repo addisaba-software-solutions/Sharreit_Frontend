@@ -95,24 +95,19 @@ export default ({ history }) => {
               </Button>
             </Grid>
             <Grid item>
-              <IconButton
-                onClick={() => history.push(routes.addItem)}
-                align="right"
-                variant="contained"
-                style={classes.button}
-              >
-                <Add />
-              </IconButton>
+              {fullName === "" ? (
+                ""
+              ) : (
+                <IconButton
+                  align="right"
+                  variant="contained"
+                  style={classes.button}
+                >
+                  <Add />
+                </IconButton>
+              )}
             </Grid>
             <Grid item>
-              {
-                fullName === "" ? "" : (
-                  <IconButton align="right" variant="contained" style={classes.button}>
-                    <Add />
-                  </IconButton>
-                )
-              }
-
               {fullName === "" ? (
                 <Button
                   align="right"
