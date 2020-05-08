@@ -20,7 +20,11 @@ import S5 from "../../Assets/serviceSharing/cleaning.svg";
 import D0 from "../../Assets/digitalSharing/subscription.svg";
 import D1 from "../../Assets/digitalSharing/ticket.svg";
 
-export const categories = ["Products", "Services", "Digital"];
+export const categories = [
+  "Product Sharing",
+  "Services Sharing",
+  "Digital Sharing",
+];
 
 export const subCategories = {
   [categories[0]]: [

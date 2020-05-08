@@ -62,7 +62,7 @@ const classes = {
   user_name: {
     color: "#000",
     marginTop: 9
-  }
+  },
 };
 
 export default classes;
