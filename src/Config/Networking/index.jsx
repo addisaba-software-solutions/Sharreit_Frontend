@@ -1,4 +1,5 @@
 import keys from '../keys'
+import axios from 'axios'
 
 export const sendGetRequest = async (url) => {
     const requestOptions = {
@@ -49,11 +50,25 @@ export const sendPostRequestWithToken = async (url, data) => {
         headers: {
             'Authorization': bearer,
             'Content-Type': 'application/json'
-        }
+        },
+        body: data
     }
     return fetch(url, requestOptions).then(res => res.json())
 }
 
-export const sendFormData = async (url, route, formData) => {
-    
+export const sendFormData = async (url,  formData) => {
+    const bearer = "Bearer " + sessionStorage.getItem(keys['TOKEN'])
+    var requestOptions = {
+        method: "POST",
+        headers: {
+            'Authorization': bearer
+        },
+        body: formData
+    }
+
+    const response = await fetch(url, requestOptions)
+    const fetchedData = await response.json()
+    return {
+        status: response.status, data: fetchedData
+    }
 }
